@@ -1,6 +1,6 @@
 {
-  "name": "foundation-apps-template",
-  "version": "1.2.0",
+  "name": "curiouschaos",
+  "version": "0.0.1",
   "scripts": {
     "start": "gulp",
     "build": "gulp build --production"
