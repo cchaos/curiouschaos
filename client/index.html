@@ -11,12 +11,21 @@
     <script src="./assets/js/app.js"></script>
   </head>
   <body>
-    <div class="grid-frame vertical">
-      <div class="grid-content shrink" style="padding: 0;">
-        <ul class="primary condense menu-bar">
-          <li><a><strong>CuriousChaos</strong></a></li>
-        </ul>
-      </div>
+    <div class="grid-frame">
+      <header id="top-banner" role="banner" class="grid-content" style="padding: 0;">
+        <div class="inner">
+        	<h1><a ui-sref="home"><div id="horn_images">
+						<img src="assets/img/trumpet.svg" alt="trumpet" />
+						<img src="assets/img/antler.svg" alt="antler" />
+						<img src="assets/img/hand.svg" alt="hand giving Rock n' roll symbol" />
+  	      	</div>Caroline L. Horn</a></h1>
+        </div>
+        <div class="inner show-for-large">
+	      	<p>I am a multidisciplinary designer and developer with over eight years experience. I am passionate about design, both aesthetically and functionally. I create digital experiences that are based on the needs of its users and are tailored to the goals of the client.</p>
+  	      <p><a ui-sref="about">More about me</a></p>
+        </div>
+  		</header>
+
       <div ui-view class="grid-content">
       </div>
     </div>

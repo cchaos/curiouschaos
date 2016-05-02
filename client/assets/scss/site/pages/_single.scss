@@ -1,0 +1,407 @@
+// Styles for single posts
+body.single-post {
+	@media #{$small-only}, #{$medium-only} {
+		background-image: none !important;
+	}
+}
+
+
+.post header,
+.entry-content {
+	background-color: $white;
+}
+
+// TOP AREA
+//
+
+.header_video,
+.header_video_image {
+	background-color: $white;
+	video {
+		max-width: 100%;
+	}
+}
+
+.post header {
+	@include make-section;
+
+	.entry-title {
+		margin-bottom: 1rem;
+	}
+}
+
+.post-tags {
+
+	text-transform: uppercase;
+	text-align: center;
+	opacity: .6;
+
+	span {
+		display: inline-block;
+		float: none;
+
+		&:not(:last-child)::after {
+			content: ",";
+			margin-right: 1rem;
+		}
+	}
+}
+
+// OVERALL CONTENT
+//
+
+.entry-content {
+	p {
+		max-width: 32rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+
+		&.text-center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+
+// TYPES OF CONTENT
+//
+
+.screenshot {
+	margin-top: 3rem;
+	//margin-bottom: 5rem;
+}
+
+.description {
+	margin-top: 2rem;
+}
+
+@media #{$large-up} {
+	.screenshot {
+		margin-top: 5rem;
+		//margin-bottom: 5rem;
+	}
+
+	.description {
+		margin-top: 8rem;
+	}
+}
+
+.video_browser {
+	margin-bottom: 4rem;
+
+	p {
+		margin-top: 3rem;
+	}
+}
+
+aside.thanks {
+	padding: 1rem;
+	background-color: $oil;
+	color: $gainsboro;
+	opacity: .8;
+	text-align: center;
+	font-style: italic;
+}
+
+// NAVIGATION
+//
+
+.posts_navigation {
+	background-color: rgba($white, 1);
+
+  border-bottom: 1px solid $iron;
+  @media #{$large-up} {
+	  border-bottom: none;
+  }
+
+	ul {
+		margin-bottom: 0;
+	}
+	li {
+		margin-left: 0;
+		padding: 0;
+	}
+
+	a {
+		@extend .button;
+		@extend .secondary;
+		background-color: transparent !important;
+
+		transition: color .25s;
+
+		&:hover,
+		&:active {
+			color: $primary-color;
+		}
+
+		margin-bottom: 0;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+
+		background-position-y: center;
+		background-repeat: no-repeat;
+
+	  width: 100%;
+	  white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+
+	  @media #{$large-up} {
+	  	width: auto;
+		  max-width: 100%;
+	  }
+	}
+
+	li:first-child a {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='36' viewBox='-75 41 48 36'><path fill='#E77366' d='M-33,57.5h-18.3l8.4-8.4L-45,47l-12,12l12,12l2.1-2.1l-8.4-8.4H-33V57.5z'/></svg>");
+		background-position-x: left;
+		padding-left: 70px;
+	}
+
+	li:last-child {
+		border-left: 1px solid $iron;
+		float: right;
+
+		a {
+			background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='36' viewBox='0 0 48 36'><path fill='#E77366' d='M18 6l-2.12 2.12 8.38 8.38H6v3h18.26l-8.38 8.38L18 30l12-12z'/></svg>");
+			background-position-x: right;
+			padding-right: 70px;
+			text-align: right;
+		}
+
+		@media #{$large-up} {
+		 	border: none;
+		}
+	}
+
+	@media #{$xxlarge-up} {
+		background-color: rgba($white, .7);
+		margin-top: 3rem;
+	}
+}
+
+
+// SPECIFIC POSTS
+
+// Johnson Wedding
+#post-1 {
+	header {
+		padding-bottom: 0;
+	}
+
+	.screenshot {
+		margin-bottom: 3rem;
+	}
+
+	.description {
+		@media #{$large-up} {
+			margin-top: 20rem;
+		}
+	}
+
+	.quote {
+		margin-bottom: 3rem;
+		blockquote {
+			color: #677e90;
+			text-align: center;
+			font-size: $h3-font-size;
+		}
+	}
+}
+
+// Stanley Wedding
+#post-25 {
+	header {
+		padding-bottom: 0;
+	}
+	@media #{$large-up} {
+		.give_something {
+			.screenshot {
+				margin-top: 0;
+			}
+			.description {
+				padding-left: 3rem;
+				padding-right: 3rem;
+			}
+		}
+	}
+	@media #{$screen} and (min-width: 770px) and (max-width: 880px) {
+		.description {
+			margin-top: 2rem;
+		}
+	}
+}
+
+// RMB
+#post-26 {
+	[class ^= "mobile_"] {
+		margin-top: 4rem;
+
+		@media #{$large-up} {
+			margin-top: 6.5rem;
+		}
+	}
+
+	.header_video_image {
+		position: relative;
+
+		.the_video {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+	}
+
+	aside .link_out {
+		background-color: #4d4d4d;
+		h4 {
+			margin-top: 1rem;
+			color: $white !important;
+			margin-bottom: 2rem;
+		}
+		margin-top: 4rem;
+		@media #{$large-up} {
+			margin-top: 0;
+		}
+		padding: 2rem;
+
+		.button {
+			@include button-style($bg:#008085);
+			font-weight: $font-weight-bold;
+		}
+	}
+}
+
+// The Road
+#post-27,
+#post-100 {
+	[class^="detail_"] {
+		margin-top: 5rem;
+	}
+	.detail_2 {
+		position: relative;
+		margin-bottom: 5rem;
+		img:last-child {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	.video-center {
+		margin-top: 5rem;
+		margin-bottom: 5rem;
+	}
+	aside.link_out {
+		background-color: #f0eeec;
+		padding: 2rem;
+		margin-bottom: 5rem;
+
+		p {
+			max-width: none;
+			margin-bottom: 0;
+			padding-left: 1rem;
+			padding-right: 1rem;
+			color: #016e7a;
+		}
+
+		a {
+			margin-bottom: 0;
+			margin-top: 2rem;
+			@include button-style(#016e7a);
+		}
+	}
+}
+
+// Misadventures
+body.postid-100 {
+	background-repeat: repeat;
+	background-size: auto;
+}
+#post-100 {
+	aside.note {
+		background-color: $silver;
+		padding: 1rem;
+		p {
+			text-align: center;
+			font-size: 80%;
+			font-style: italic;
+			max-width: none;
+			margin-bottom: 0;
+			opacity: .5;
+		}
+	}
+	.video-center {
+		margin-bottom: 0;
+	}
+	aside.link_out {
+		background-color: #999;
+		p {
+			color: $silver;
+			text-align: center;
+			font-style: italic;
+		}
+	}
+	.mobile {
+		margin-top: 5rem;
+		margin-bottom: 5rem;
+	}
+}
+
+// WILL APPS
+#post-122 {
+
+	.logos {
+		margin-top: 3rem;
+		border-top: 1px solid $gainsboro;
+		border-bottom: 1px solid $gainsboro;
+
+		@media #{$xlarge-up} {
+			border-left: 1px solid $gainsboro;
+			border-right: 1px solid $gainsboro;
+		}
+
+		+ p {
+			display: none;
+		}
+
+		> div {
+			text-align: center;
+
+			&:first-child {
+				border-bottom: 1px solid $gainsboro;
+
+				@media #{$medium-up} {
+					border-bottom: none;
+					border-right: 1px solid $gainsboro;
+				}
+			}
+		}
+		p {
+			text-transform: uppercase;
+			color: $base;
+			max-width: none;
+			font-size: $small-font-size;
+			font-weight: $font-weight-bold;
+		}
+	}
+
+	.entry-content > div > .row:nth-of-type(2n) {
+		background-color: $tuatara;
+
+		p {
+			color: $white;
+		}
+	}
+
+	.screenshot img:first-child {
+		position: relative !important;
+		display: block !important;
+	}
+
+	h3 {
+		color: #48bc97;
+		padding: 2rem 0;
+	}
+
+}

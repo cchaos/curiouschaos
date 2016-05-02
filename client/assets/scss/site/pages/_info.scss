@@ -1,0 +1,49 @@
+///
+// VARIABLES
+///
+
+#post-146,
+#post-149 {
+
+	h2, h3.no-row {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	h2 {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	h3 {
+		margin-bottom: 2rem;
+	}
+
+	.no-wrap {
+		@media #{$medium-up} {
+			white-space: nowrap;
+		}
+	}
+
+	h3.no-row {
+		margin-top: 3rem;
+		margin-bottom: 0;
+	}
+
+	li {
+		margin-bottom: .5rem;
+	}
+
+}
+
+
+.resume-row {
+
+	@include make-section(1.5rem);
+
+	.column {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+}

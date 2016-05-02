@@ -1,0 +1,17 @@
+#about-page {
+
+  background-color: $primary-color;
+  min-height: 100vh;
+  margin-left: -$global-spacing;
+  margin-right: -$global-spacing;
+
+  // Children
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .inner {
+    padding: $global-padding;
+  }
+
+}

@@ -1,0 +1,133 @@
+/*
+ Global styles for FoundationPress
+ Demo: http://foundationpress.olefredrik.com
+*/
+
+// Prettify type rendering
+body {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+// Reset margin and padding on figure element
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+// Add some basic styling for figcaption element
+figcaption {
+	margin-bottom: rem-calc(20);
+	margin-top: rem-calc(10);
+	color: $monsoon;
+}
+
+blockquote {
+	font-family: $font-family-serif;
+	//font-style: $font-style-italic;
+	cite {
+		padding-left: 40%;
+	}
+}
+
+// TYPOGRAPHY
+// Specific font families for headers sizes
+a {
+	transition: color .15s,
+	            background .15s;
+}
+
+h1, h2 {
+	//font-family: $font-family-headline;
+	text-align: center;
+	font-weight: $font-weight-bold;
+}
+
+h1 {
+	text-transform: uppercase;
+	color: currentColor;
+}
+
+h2 {
+	color: $steel;
+	letter-spacing: -.02em;
+	margin-bottom: 2.5rem;
+}
+
+h3 {
+	text-transform: uppercase;
+	color: $primary-color;
+}
+
+h4 {
+	font-weight: $font-weight-bold;
+}
+
+h5.subheader {
+	text-align: center;
+	max-width: 48rem;
+	margin: 0 auto 2.5rem;
+}
+
+// LAYOUT
+// Section paddings and such
+$section-padding: 5rem;
+
+@mixin make-section($padding: $section-padding) {
+	padding-top: $padding/1.5;
+	padding-bottom: $padding/1.5;
+
+	@include breakpoint(medium) {
+		padding-top: $padding;
+		padding-bottom: $padding;
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+section.layout {
+	@include make-section();
+}
+
+// BUTTONS
+
+.button.secondary {
+	color: $steel;
+}
+
+
+// CUSTOM MIXINS
+// ---------------------
+// force the wrapping of long links/emails/etc.
+@mixin force-wrap() {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+}
+
+@mixin force-truncate($width: 100%) {
+  width: $width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// GRID FRAME LAYOUT
+.grid-frame {
+ display: block;
+
+  @include breakpoint(large) {
+    display: flex;
+  }
+
+}
+
+
+// SMALL SIZES MOVE HEADER TO TOP
