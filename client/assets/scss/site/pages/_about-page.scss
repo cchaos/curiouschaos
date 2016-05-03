@@ -1,20 +1,45 @@
+.about {
+  #top-banner .home-link {
+    display: block;
+  }
+
+  #top-banner .about-link {
+    display: none;
+  }
+}
+
 #about-page {
 
   background-color: $primary-color;
+  #{$headers}, p {
+    color: $white;
+  }
+
   margin-left: -$global-spacing;
   margin-right: -$global-spacing;
 
   // Children
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 
   .inner {
     padding: $global-padding;
   }
 
-  @include breakpoint(large) {
+  #{$headers}, p {
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include breakpoint($horizontal-breakpoint) {
     min-height: 100vh;
+
+    .first p {
+      margin-bottom: 5rem;
+      font-size: $h3-font-size;
+    }
   }
 
 }
