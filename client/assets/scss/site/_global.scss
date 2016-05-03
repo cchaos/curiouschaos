@@ -1,7 +1,4 @@
-/*
- Global styles for FoundationPress
- Demo: http://foundationpress.olefredrik.com
-*/
+$horizontal-breakpoint: xlarge;
 
 // Prettify type rendering
 body {
@@ -39,7 +36,7 @@ a {
 
 h1, h2 {
 	//font-family: $font-family-headline;
-	text-align: center;
+	//text-align: center;
 	font-weight: $font-weight-bold;
 }
 
@@ -49,9 +46,8 @@ h1 {
 }
 
 h2 {
-	color: $steel;
 	letter-spacing: -.02em;
-	margin-bottom: 2.5rem;
+	//margin-bottom: 2.5rem;
 }
 
 h3 {
@@ -124,12 +120,33 @@ section.layout {
  display: block;
  overflow-y: auto;
 
-  @include breakpoint(large) {
+  @include breakpoint($horizontal-breakpoint) {
     display: flex;
     overflow-y: hidden;
   }
-
 }
 
 
-// SMALL SIZES MOVE HEADER TO TOP
+// FOOTER
+footer {
+  padding-top: $global-padding;
+
+  ul.inline-list, p {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  li, p {
+    font-size: $small-font-size*.8;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+
+  p {
+    color: $gray;
+  }
+
+  @include breakpoint($horizontal-breakpoint) {
+    display: none;
+  }
+}

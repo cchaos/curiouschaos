@@ -2,7 +2,7 @@
 
   flex: 0 0 30%;
   min-width: rem-calc(300);
-  border-right: 1px solid $gray;
+  border-right: 1px solid $silver;
 
   // Children
   display: flex;
@@ -10,7 +10,37 @@
   justify-content: space-between;
 
   .inner {
-    padding: $global-padding;
+    padding: $global-padding*2 $global-padding $global-padding;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: $global-padding*3;
+  }
+
+  header p {
+    width: 90%;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+    font-weight: $font-weight-bold;
+  }
+
+  footer {
+    display: none;
+  }
+
+  @include breakpoint($horizontal-breakpoint) {
+    header p {
+      text-align: left;
+      width: 70%;
+    }
+
+    footer {
+      display: block;
+    }
   }
 
 }
