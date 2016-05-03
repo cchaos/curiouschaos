@@ -1,7 +1,6 @@
 #about-page {
 
   background-color: $primary-color;
-  min-height: 100vh;
   margin-left: -$global-spacing;
   margin-right: -$global-spacing;
 
@@ -12,6 +11,10 @@
 
   .inner {
     padding: $global-padding;
+  }
+
+  @include breakpoint(large) {
+    min-height: 100vh;
   }
 
 }

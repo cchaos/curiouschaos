@@ -150,9 +150,9 @@ $global-spacing: 1rem;
 // These are our named breakpoints. You can use them in our breakpoint function like this: @include breakpoint(medium) { // Medium and larger styles }
 $breakpoints: (
   small: rem-calc(0),
-  medium: rem-calc(640),
-  large: rem-calc(768),
-  xlarge: rem-calc(1200),
+  medium: rem-calc(641),
+  large: rem-calc(769),
+  xlarge: rem-calc(1201),
   xxlarge: rem-calc(1920),
 );
 

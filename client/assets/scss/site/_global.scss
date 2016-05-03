@@ -122,9 +122,11 @@ section.layout {
 // GRID FRAME LAYOUT
 .grid-frame {
  display: block;
+ overflow-y: auto;
 
   @include breakpoint(large) {
     display: flex;
+    overflow-y: hidden;
   }
 
 }
