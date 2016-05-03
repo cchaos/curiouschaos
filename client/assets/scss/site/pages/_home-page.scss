@@ -53,11 +53,39 @@
     > a {
       display: flex;
       flex-direction: column;
+
+      position: relative;
+      overflow: hidden;
+      .background {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        left: 0;
+        top: -90%;
+        opacity: 0;
+        transition: all .25s ease-in;
+      }
+
+      &:hover,
+      &:focus {
+
+        .background {
+          top: -100%;
+          opacity: .3;
+        }
+
+      }
     }
   }
 
   h2 {
     margin-top: 0;
+  }
+
+  .text,
+  .details {
+    position: relative;
+    z-index: 2;
   }
 
   .text {
@@ -88,5 +116,16 @@
         margin-top: $global-padding/2;
       }
     }
+  }
+}
+
+@keyframes recent-background-anim() {
+  0% {
+    top: -90%;
+    opacity: 0;
+  }
+  100% {
+    top: -100%;
+    opacity: .3;
   }
 }
