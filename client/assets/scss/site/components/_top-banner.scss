@@ -13,7 +13,7 @@
 
   h1 {
     text-align: center;
-    margin-bottom: $global-padding*3;
+    margin-bottom: $global-padding;
   }
 
   header p {
@@ -26,8 +26,9 @@
     font-weight: $font-weight-bold;
   }
 
+  .me-description,
   footer,
-  .home-link {
+  .about-link {
     display: none;
   }
 
@@ -38,11 +39,16 @@
     background-color: $smoke;
     border-right: 1px solid $silver;
 
+    h1 {
+      margin-bottom: $global-padding*3;
+    }
+
     header p {
       text-align: left;
       width: 70%;
     }
 
+    .me-description,
     footer {
       display: block;
     }

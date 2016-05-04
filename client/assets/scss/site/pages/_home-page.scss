@@ -1,10 +1,17 @@
 .home {
 
-    main {
-background-color: $primary-color;
+  #top-banner {
+    .home-link {
+      display: none;
+    }
+    .me-description,
+    .about-link {
+      display: block;
+    }
+  }
 
-      h1 {
-      }
+  main {
+    background-color: $primary-color;
   }
 
 }
