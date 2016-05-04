@@ -16,23 +16,17 @@
 	}
 
 	aside .link_out {
-		background-color: #4d4d4d;
+		background-color: $silver;
 		padding: 2rem;
-
 		margin-top: 4rem;
-
-		@include breakpoint($horizontal-breakpoint) {
-			margin-top: 0;
-		}
 
 		h4 {
 			margin-top: 1rem;
-			color: $white !important;
+			//color: $white-smoke !important;
 			margin-bottom: 2rem;
 		}
 
 		.button {
-			@include button-style($background:#008085, $background-hover:auto, $color: $white);
 			font-weight: $font-weight-bold;
 		}
 	}
