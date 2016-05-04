@@ -1,8 +1,6 @@
 #top-banner {
 
-  flex: 0 0 30%;
-  min-width: rem-calc(300);
-  border-right: 1px solid $silver;
+  flex: 0 0 100%;
 
   // Children
   display: flex;
@@ -34,6 +32,12 @@
   }
 
   @include breakpoint($horizontal-breakpoint) {
+    flex-basis: 30%;
+    min-width: rem-calc(300);
+    max-width: rem-calc(500);
+    background-color: $smoke;
+    border-right: 1px solid $silver;
+
     header p {
       text-align: left;
       width: 70%;

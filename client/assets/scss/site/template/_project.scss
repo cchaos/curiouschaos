@@ -1,0 +1,84 @@
+
+// HEADER
+//
+
+.project header {
+	@include make-section;
+
+	.entry-title {
+		margin-bottom: 1rem;
+	}
+}
+
+.post-tags {
+
+	text-transform: uppercase;
+	text-align: center;
+	opacity: .6;
+
+	span {
+		display: inline-block;
+		float: none;
+
+		&:not(:last-child)::after {
+			content: ",";
+			margin-right: 1rem;
+		}
+	}
+}
+
+// OVERALL CONTENT
+//
+
+.entry-content {
+	p {
+		max-width: 32rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+
+		&.text-center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+// TYPES OF CONTENT
+//
+
+.screenshot {
+	margin-top: 3rem;
+	text-align: center;
+}
+
+.description {
+	margin-top: 2rem;
+}
+
+@include breakpoint($horizontal-breakpoint) {
+	.screenshot {
+		margin-top: 5rem;
+		//margin-bottom: 5rem;
+	}
+
+	.description {
+		margin-top: 8rem;
+	}
+}
+
+.video_browser {
+	margin-bottom: 4rem;
+
+	p {
+		margin-top: 3rem;
+	}
+}
+
+aside.thanks {
+	padding: 1rem;
+	background-color: $oil;
+	color: $gainsboro;
+	opacity: .8;
+	text-align: center;
+	font-style: italic;
+}

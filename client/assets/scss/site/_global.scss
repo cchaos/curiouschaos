@@ -120,11 +120,20 @@ section.layout {
  display: block;
  overflow-y: auto;
 
+  main.grid-block {
+    overflow: hidden;
+  }
+
   @include breakpoint($horizontal-breakpoint) {
     display: flex;
     overflow-y: hidden;
+
+    main.grid-block {
+      overflow-y: auto;
+    }
   }
 }
+
 
 
 // FOOTER
@@ -138,6 +147,9 @@ footer {
 
   li, p {
     font-size: $small-font-size*.8;
+  }
+
+  li {
     text-transform: uppercase;
     letter-spacing: .05em;
   }

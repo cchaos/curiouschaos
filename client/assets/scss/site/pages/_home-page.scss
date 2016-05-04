@@ -1,7 +1,7 @@
 .home {
 
     main {
-      background-color: $primary-color;
+background-color: $primary-color;
 
       h1 {
       }
@@ -34,20 +34,19 @@
 
   @include block-list-container();
   margin-bottom: 0;
-  background-color: $body-background;
 
   > li {
     @include block-list-item(
-                $color: inherit, // Color of items
-                $color-hover: inherit, // Color of items on hover
-                $color-disabled: $gray, // Color of items when disabled
-                $background: $body-background, // Background color
-                $background-hover: $smoke, // Background color on hover
-                $border: 1px solid $silver, // Top and bottom border of items
+                $color: $white, // Color of items
+                $color-hover: $white, // Color of items on hover
+                $color-disabled: $white, // Color of items when disabled
+                $background: transparent, // Background color
+                $background-hover: rgba($white, .1), // Background color on hover
+                $border: 1px solid rgba($white, .2), // Top and bottom border of items
                 $padding: $global-padding*2 $global-padding );
 
-    &:nth-child(even) {
-      background-color: $silver;
+    &:nth-child(odd) {
+      //background-color: rgba($white, .2);
     }
 
     > a {
@@ -80,6 +79,11 @@
 
   h2 {
     margin-top: 0;
+    color: $white;
+  }
+
+  .subheader {
+    color: rgba($white, .5);
   }
 
   .text,
