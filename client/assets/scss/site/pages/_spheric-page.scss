@@ -1,0 +1,17 @@
+#spheric-page article {
+
+}
+
+#spheric-responsive {
+
+  .images {
+    position: relative;
+
+    img:last-child {
+      position: absolute;
+      max-width: 31.25%;
+      right: 1.25%;
+      bottom: 10.5%;
+    }
+  }
+}
