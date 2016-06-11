@@ -38,9 +38,15 @@ var paths = {
     'bower_components/angular/angular.js',
     'bower_components/angular-animate/angular-animate.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
-    'bower_components/foundation-apps/js/vendor/**/*.js',
+    '!bower_components/foundation-apps/js/vendor/**/*.js',
     'bower_components/foundation-apps/js/angular/**/*.js',
     '!bower_components/foundation-apps/js/angular/app.js'
+  ],
+  // These files include other Vendor scripts
+  vendorJS: [
+    'bower_components/jquery/dist/jquery.js',
+    'bower_components/slick-carousel/slick/slick.js',
+    'bower_components/angular-slick/dist/slick.js'
   ],
   // These files are for your app's JavaScript
   appJS: [
@@ -116,7 +122,7 @@ gulp.task('sass', function () {
 });
 
 // Compiles and copies the Foundation for Apps JavaScript, as well as your app's custom JS
-gulp.task('uglify', ['uglify:foundation', 'uglify:app'])
+gulp.task('uglify', ['uglify:foundation', 'uglify:vendor', 'uglify:app'])
 
 gulp.task('uglify:foundation', function(cb) {
   var uglify = $.if(isProduction, $.uglify()
@@ -127,6 +133,19 @@ gulp.task('uglify:foundation', function(cb) {
   return gulp.src(paths.foundationJS)
     .pipe(uglify)
     .pipe($.concat('foundation.js'))
+    .pipe(gulp.dest('./build/assets/js/'))
+  ;
+});
+
+gulp.task('uglify:vendor', function(cb) {
+  var uglify = $.if(isProduction, $.uglify()
+    .on('error', function (e) {
+      console.log(e);
+    }));
+
+  return gulp.src(paths.vendorJS)
+    .pipe(uglify)
+    .pipe($.concat('vendor.js'))
     .pipe(gulp.dest('./build/assets/js/'))
   ;
 });

@@ -1,5 +1,6 @@
 @import "settings";
-@import "foundation";
+@import "foundation",
+        "bower_components/slick-carousel/slick/slick.scss";
 
 @import "site/global",
         "site/components/top-banner",
