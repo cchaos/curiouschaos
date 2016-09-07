@@ -12,6 +12,8 @@ var rimraf   = require('rimraf');
 var router   = require('front-router');
 var sequence = require('run-sequence');
 
+require('es6-promise').polyfill();
+
 // Check for --production flag
 var isProduction = !!(argv.production);
 
