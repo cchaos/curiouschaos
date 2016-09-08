@@ -1,3 +1,5 @@
+$horn-images-size: rem-calc(80);
+
 #top-banner {
 
   flex: 0 0 100%;
@@ -13,6 +15,7 @@
 
   h1 {
     text-align: center;
+    margin-top: 0;
     margin-bottom: $global-padding;
   }
 
@@ -36,8 +39,8 @@
     flex-basis: 30%;
     min-width: rem-calc(300);
     max-width: rem-calc(500);
-    background-color: $smoke;
-    border-right: 1px solid $silver;
+    //background-color: $smoke;
+    //border-right: 1px solid $silver;
 
     h1 {
       margin-bottom: $global-padding*3;
@@ -62,8 +65,8 @@
 
 	// have to position all elements since we want them to be centered (without needing to use transform)
 	// need to tell the container what size it is (based on image sizes)
-	width: rem-calc(80);
-	height: rem-calc(80);
+	width: $horn-images-size;
+	height: $horn-images-size;
 	// then center it
 	margin: $global-padding auto $global-padding*2;
 
