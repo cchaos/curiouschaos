@@ -1,6 +1,8 @@
 $horn-images-size: rem-calc(80);
 
 #top-banner {
+  background: $primary-color;
+  color: $white;
 
   flex: 0 0 100%;
 
@@ -17,6 +19,7 @@ $horn-images-size: rem-calc(80);
     text-align: center;
     margin-top: 0;
     margin-bottom: $global-padding;
+    color: $white;
   }
 
   header p {
@@ -35,12 +38,22 @@ $horn-images-size: rem-calc(80);
     display: none;
   }
 
+  a {
+    color: $white;
+  }
+
   @include breakpoint($horizontal-breakpoint) {
-    flex-basis: 30%;
-    min-width: rem-calc(300);
-    max-width: rem-calc(500);
+    flex: 0 0 rem-calc(320);
+    transition: all .2s;
     //background-color: $smoke;
     //border-right: 1px solid $silver;
+
+    /*
+.home & {
+      flex: 1 0 33%;
+      max-width: none;
+    }
+*/
 
     h1 {
       margin-bottom: $global-padding*3;
@@ -48,7 +61,9 @@ $horn-images-size: rem-calc(80);
 
     header p {
       text-align: left;
-      width: 70%;
+      width: 100%;
+      padding-left: $global-padding;
+      padding-right: $global-padding;
     }
 
     .me-description,
@@ -70,7 +85,7 @@ $horn-images-size: rem-calc(80);
 	// then center it
 	margin: $global-padding auto $global-padding*2;
 
-	background-color: $primary-color;
+	background-color: desaturate(darken($primary-color, 7%), 15%);
 	border-radius: $global-rounded;
 
 	// make sure the container shrinks if the window gets too small

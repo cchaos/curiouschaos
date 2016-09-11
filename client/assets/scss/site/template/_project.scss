@@ -37,10 +37,11 @@
 //
 
 .entry-content {
+  padding-left: $global-padding*2;
+  padding-right: $global-padding*2;
+
 	p {
 		max-width: 32rem;
-		padding-left: 1rem;
-		padding-right: 1rem;
 
 		&.text-center {
 			margin-left: auto;

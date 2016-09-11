@@ -11,7 +11,7 @@
   }
 
   main {
-    background-color: $white;
+    background-color: $primary-color;
   }
 
 }
@@ -29,7 +29,7 @@
     margin-bottom: $global-padding;
     text-align: right;
     //background-color: $primary-color;
-    //color: $white;
+    color: $white;
   }
 
 
@@ -45,18 +45,41 @@
     margin: 0;
     list-style: none;
     overflow: hidden;
-    padding: $global-padding;
+    padding-bottom: $global-padding;
 
     > a {
       height: 100%;
       display: block;
-      background: $primary-color;
+      background: $white;
       padding: $global-padding;
-      color: $white;
+      color: $steel;
     }
 
     h2, .subheader {
       color: inherit;
+    }
+
+    h2 {
+      line-height: 1em;
+    }
+  }
+
+  .categories {
+    text-transform: uppercase;
+    list-style: none;
+    margin: $global-padding 0 0;
+    font-size: $small-font-size;
+
+    > li {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: $global-padding;
+
+        &::after {
+          content: ", ";
+        }
+      }
     }
   }
 
@@ -67,9 +90,36 @@
     align-items: stretch;
 
     > li {
-      flex: 0 1 500px;
+      flex: 1 1 300px;
       max-width: 50%;
-      height: 300px;
+      padding: $global-padding/2;
+
+      .text {
+        min-height: rem-calc(180);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      h2 {
+        width: 100%;
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .categories {
+        margin-top: $global-padding*2;
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    > li {
+      padding: $global-padding;
     }
   }
 
