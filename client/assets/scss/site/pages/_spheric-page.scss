@@ -2,10 +2,49 @@
 
 }
 
+#spheric-mockups {
+  background: $smoke;
+
+  .slick-slider {
+    padding-bottom: 0 !important; // for all sizes
+  }
+}
+
+#spheric-code {
+  overflow: hidden;
+
+  img {
+    max-width: 160%;
+
+    @include breakpoint(medium) {
+      max-width: 130%;
+    }
+
+    @include breakpoint(large) {
+      max-width: 100%;
+    }
+  }
+
+  @include breakpoint($horizontal-breakpoint) {
+    display: flex;
+
+    .content {
+      flex: 0 0 20rem;
+    }
+
+    img {
+      overflow: hidden;
+      max-width: 130%;
+    }
+
+  }
+}
+
 #spheric-responsive {
 
   .images {
     position: relative;
+    margin-top: $global-padding*2;
 
     img:last-child {
       position: absolute;
@@ -14,4 +53,13 @@
       bottom: 10.5%;
     }
   }
+
+  @include breakpoint(large) {
+    .images {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
+

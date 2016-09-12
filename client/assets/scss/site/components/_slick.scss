@@ -1,0 +1,82 @@
+$slick-font-path: "";
+$slick-font-family: $paragraph-font-family;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: $primary-color;
+$slick-dot-color: $oil;
+$slick-dot-color-active: $primary-color;
+$slick-prev-character: "←" !default;
+$slick-next-character: "→" !default;
+$slick-dot-character: "•" !default;
+$slick-dot-size: rem-calc(36);
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 0.5;
+$slick-opacity-not-active: 0.25 !default;
+
+@import "../../../bower_components/slick-carousel/slick/slick-theme.scss";
+
+.slick-slider {
+  padding: $global-padding 0 $global-padding*3;
+  background: $smoke;
+
+  .slick-next,
+  .slick-prev {
+    display: none;
+  }
+
+  .slick-next {
+    right: 0;
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  @include breakpoint(large) {
+    padding: $global-padding*2 $global-padding*2 $global-padding*4;
+
+    .slick-next,
+    .slick-prev {
+      display: block;
+    }
+  }
+
+  // dots on top instead of bottom
+  &.reverse {
+    padding: $global-padding*3 0 $global-padding;
+
+    .slick-dots {
+      bottom: auto;
+      top: $global-padding*.4;
+    }
+
+    .slick-next,
+    .slick-prev {
+      top: auto;
+      bottom: 50%;
+      margin-top: 0;
+      margin-bottom: -$global-padding*2;
+    }
+
+    @include breakpoint(large) {
+      padding: $global-padding*4 $global-padding*2 $global-padding*2;
+
+      .slick-dots {
+        top: $global-padding*1;
+      }
+    }
+  }
+}
+
+.slick-dots {
+  bottom: $global-padding*.8;
+  left: 0;
+  margin: 0;
+
+  li button:before {
+    transition: opacity .2s;
+  }
+
+  @include breakpoint(large) {
+    bottom: $global-padding*1.6;
+  }
+}

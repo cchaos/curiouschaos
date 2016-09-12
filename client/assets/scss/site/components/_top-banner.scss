@@ -43,32 +43,36 @@ $horn-images-size: rem-calc(80);
   }
 
   @include breakpoint($horizontal-breakpoint) {
-    flex: 0 0 rem-calc(320);
+    flex: 0 0 (rem-calc(320) - 4rem);
     transition: all .2s;
-    //background-color: $smoke;
-    //border-right: 1px solid $silver;
-
-    /*
-.home & {
-      flex: 1 0 33%;
-      max-width: none;
-    }
-*/
 
     h1 {
       margin-bottom: $global-padding*3;
+    }
+
+    .inner {
+      padding-right: 0;
     }
 
     header p {
       text-align: left;
       width: 100%;
       padding-left: $global-padding;
-      padding-right: $global-padding;
     }
 
     .me-description,
     footer {
       display: block;
+    }
+  }
+
+  @include breakpoint(95rem) {
+    flex-basis: 20%;
+
+    .inner {
+      width: (rem-calc(320) - 4rem);
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 

@@ -202,7 +202,7 @@ $small-font-size: 80%;
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
-$paragraph-font-size: 1rem;
+$paragraph-font-size: rem-calc(14);
 $paragraph-line-height: $base-line-height;
 $paragraph-margin-bottom: 1rem;
 // $paragraph-aside-font-size: rem-calc(14);
