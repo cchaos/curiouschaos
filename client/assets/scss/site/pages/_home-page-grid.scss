@@ -69,18 +69,8 @@
   > li {
     margin: 0;
     list-style: none;
-    overflow: hidden;
+    overflow: visible;
     padding-bottom: $global-padding;
-
-    transition: all .2s;
-    -webkit-font-smoothing: antialiased;
-    opacity: .8;
-    &:hover,
-    &:focus {
-      opacity: 1;
-      transform: translateZ(0) scale(1.05);
-      transform-origin: center;
-    }
 
     > a {
       height: 100%;
@@ -88,6 +78,19 @@
       background: $white;
       padding: $global-padding;
       color: $steel;
+
+      transition: all .3s ease-out;
+      opacity: .8;
+      &:hover,
+      &:focus {
+        opacity: 1;
+        box-shadow:
+          0 4px 4px rgba(0, 0, 0, .1),
+          0 8px 8px rgba(0, 0, 0, .1),
+          0 16px 16px rgba(0, 0, 0, .1),
+          0 32px 32px rgba(0, 0, 0, .15),
+          0 64px 64px rgba(0, 0, 0, .15);
+      }
     }
 
     h2, .subheader {

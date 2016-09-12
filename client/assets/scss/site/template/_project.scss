@@ -3,6 +3,13 @@
 
 .project {
   width: 100%;
+  max-width: calc(75rem);
+  margin: 0 auto;
+
+  article {
+    background: $white;
+    max-width: none;
+  }
 }
 
 // HEADER
@@ -51,6 +58,11 @@
 			margin-right: auto;
 		}
 	}
+
+	@include breakpoint(95rem) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 
 // TYPES OF CONTENT
