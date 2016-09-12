@@ -17,6 +17,27 @@
 }
 
 
+
+.categories {
+  text-transform: uppercase;
+  list-style: none;
+  margin: $global-padding 0 0;
+  font-size: $small-font-size;
+
+  > li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: $global-padding;
+
+      &::after {
+        content: ", ";
+      }
+    }
+  }
+}
+
+
 #home-page {
 
   // Children
@@ -25,7 +46,7 @@
   //justify-content: flex-end;
 
   h1 {
-    margin-top: $horn-images-size + $global-padding*4;
+    margin-top: $global-padding*2;
     margin-bottom: $global-padding;
     text-align: right;
     //background-color: $primary-color;
@@ -35,6 +56,10 @@
 
   @include breakpoint($horizontal-breakpoint) {
     min-height: 100vh;
+
+    h1 {
+      margin-top: $horn-images-size + $global-padding*4;
+    }
   }
 }
 
@@ -46,6 +71,16 @@
     list-style: none;
     overflow: hidden;
     padding-bottom: $global-padding;
+
+    transition: all .2s;
+    -webkit-font-smoothing: antialiased;
+    opacity: .8;
+    &:hover,
+    &:focus {
+      opacity: 1;
+      transform: translateZ(0) scale(1.05);
+      transform-origin: center;
+    }
 
     > a {
       height: 100%;
@@ -61,25 +96,6 @@
 
     h2 {
       line-height: 1em;
-    }
-  }
-
-  .categories {
-    text-transform: uppercase;
-    list-style: none;
-    margin: $global-padding 0 0;
-    font-size: $small-font-size;
-
-    > li {
-      display: inline-block;
-
-      &:not(:last-child) {
-        margin-right: $global-padding;
-
-        &::after {
-          content: ", ";
-        }
-      }
     }
   }
 
@@ -120,6 +136,14 @@
   @include breakpoint(large) {
     > li {
       padding: $global-padding;
+
+      a {
+        padding: $global-padding*2;
+      }
+
+      .text {
+        min-height: rem-calc(220);
+      }
     }
   }
 

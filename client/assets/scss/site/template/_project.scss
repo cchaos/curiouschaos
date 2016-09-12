@@ -9,29 +9,32 @@
 //
 
 .project header {
-	@include make-section;
+	padding-top: $global-padding;
+	padding-bottom: $global-padding*2;
 
 	.entry-title {
+	  font-size: $h2-font-size*1.2;
 		margin-bottom: 1rem;
 	}
-}
 
-.post-tags {
-
-	text-transform: uppercase;
-	text-align: center;
-	opacity: .6;
-
-	span {
-		display: inline-block;
-		float: none;
-
-		&:not(:last-child)::after {
-			content: ",";
-			margin-right: 1rem;
-		}
+	.categories {
+  	margin-bottom: $global-padding*2;
 	}
+
+	p {
+	  padding-left: $global-padding*2;
+    padding-right: $global-padding*2;
+    max-width: 40rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+  @include breakpoint($horizontal-breakpoint) {
+    padding-top: $global-padding*2;
+    padding-bottom: $global-padding*3;
+  }
 }
+
 
 // OVERALL CONTENT
 //
@@ -89,3 +92,82 @@ aside.thanks {
 	text-align: center;
 	font-style: italic;
 }
+
+// NAVIGATION
+//
+
+.posts_navigation {
+  border-top: 1px solid $iron;
+	margin-top: 3rem;
+
+	ul {
+		margin: 0;
+	}
+
+	li {
+		margin-left: 0;
+		padding: 0;
+		list-style: none;
+		margin: 0;
+	  display: inline-block;
+	  width: 49%;
+
+	  &:last-child {
+  	  float: right;
+	  }
+	}
+
+	a {
+		@extend .button;
+		@extend .secondary;
+		background-color: transparent !important;
+		margin: 0;
+		font-weight: bold;
+
+		transition: color .25s;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $primary-color;
+		}
+
+		margin-bottom: 0;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+
+		background-position-y: center  !important;
+		background-repeat: no-repeat !important;
+
+	  width: 100%;
+	  white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+
+	  @include breakpoint(large) {
+	  	width: auto;
+		  max-width: 100%;
+	  }
+	}
+
+	li:first-child a {
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='36' viewBox='-75 41 48 36'><path fill='#E77366' d='M-33,57.5h-18.3l8.4-8.4L-45,47l-12,12l12,12l2.1-2.1l-8.4-8.4H-33V57.5z'/></svg>");
+		background-position-x: left  !important;
+		padding-left: 70px;
+		text-align: right;
+	}
+
+	li:last-child {
+		border-left: 1px solid $iron;
+		text-align: right;
+
+		a {
+			background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='36' viewBox='0 0 48 36'><path fill='#E77366' d='M18 6l-2.12 2.12 8.38 8.38H6v3h18.26l-8.38 8.38L18 30l12-12z'/></svg>");
+			background-position-x: right  !important;
+			padding-right: 70px;
+			text-align: right;
+		}
+	}
+}
+
+
