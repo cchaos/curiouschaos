@@ -4,6 +4,12 @@ $horizontal-breakpoint: xlarge;
 body {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
+
+/*
+	background-image:  url('../img/pattern2.gif'), url('../img/gradient2.jpg');
+	background-size: 300px, cover;
+	background-position: center, center;
+*/
 }
 
 // Reset margin and padding on figure element

@@ -3,9 +3,7 @@
 ///
 
 #top-banner {
-	//background: url(../assets/img/home-photography-bg.jpg) no-repeat center center;
-	//background-attachment: fixed;
-	// background-size: cover;
+  background: $primary-color;
 
 	@include make-section(2rem);
 	color: #666;

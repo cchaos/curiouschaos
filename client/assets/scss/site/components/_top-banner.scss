@@ -1,7 +1,6 @@
 $horn-images-size: rem-calc(80);
 
 #top-banner {
-  background: $primary-color;
   color: $white;
 
   flex: 0 0 100%;
@@ -89,7 +88,7 @@ $horn-images-size: rem-calc(80);
 	// then center it
 	margin: $global-padding auto $global-padding*2;
 
-	background-color: desaturate(darken($primary-color, 7%), 15%);
+	background-color: desaturate(lighten($primary-color, 2%), 5%);
 	border-radius: $global-rounded;
 
 	// make sure the container shrinks if the window gets too small
@@ -101,7 +100,7 @@ $horn-images-size: rem-calc(80);
 		left: 0px;
 
 		// incase there's no javascript, hide all but the first
-		.no-js &:not(:first-child){
+		&:not(:first-child){
 			display: none;
 		}
 	}
