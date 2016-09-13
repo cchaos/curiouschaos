@@ -10,15 +10,6 @@
     }
   }
 
-  main {
-  	background: $primary-color url('../img/pattern3.png') left top no-repeat;
-  	background-size: 100% auto;
-
-  	@include breakpoint($horizontal-breakpoint) {
-    	background-position-x: 2rem;
-  	}
-  }
-
 }
 
 
