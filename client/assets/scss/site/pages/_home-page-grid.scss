@@ -45,10 +45,9 @@
 
 #home-page {
 
-  // Children
-  //display: flex;
-  //flex-direction: column;
-  //justify-content: flex-end;
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
 
   h1 {
     margin-top: $global-padding*2;
@@ -85,7 +84,7 @@
       color: $steel;
 
       transition: all .3s ease-out;
-      opacity: .8;
+      opacity: .9;
       &:hover,
       &:focus {
         opacity: 1;
@@ -141,7 +140,7 @@
     }
   }
 
-  @include breakpoint(large) {
+  @include breakpoint($horizontal-breakpoint) {
     > li {
       padding: $global-padding;
 
@@ -150,8 +149,14 @@
       }
 
       .text {
-        min-height: rem-calc(220);
+        min-height: rem-calc(200);
       }
+    }
+  }
+
+  @include breakpoint(rem-calc(1440)) {
+    > li  {
+      transform: scale(calc(100% * .2));
     }
   }
 

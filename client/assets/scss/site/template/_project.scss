@@ -3,7 +3,7 @@
 
 .project {
   width: 100%;
-  max-width: calc(75rem);
+  max-width: $container-width;
   margin: 0 auto;
 
   article {
@@ -168,6 +168,7 @@ aside.thanks {
 		&:active,
 		&:focus {
 			color: $primary-color;
+			box-shadow: none;
 		}
 
 		margin-bottom: 0;

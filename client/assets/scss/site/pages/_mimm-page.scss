@@ -1,0 +1,23 @@
+#mimm-page {
+
+  aside {
+    text-align: center;
+    padding: 1rem;
+    background: $monsoon;
+    color: $white;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    &:last-of-type {
+      background: $smoke;
+      color: $aluminum;
+
+      p {
+        font-size: $small-font-size;
+        font-style: italic;
+      }
+    }
+  }
+}

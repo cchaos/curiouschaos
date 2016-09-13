@@ -79,6 +79,10 @@ p.ideal {
 	}
 }
 
+video {
+  max-width: 100%;
+}
+
 // LAYOUT
 // Section paddings and such
 $section-padding: 5rem;
@@ -105,6 +109,19 @@ section.layout {
 
 .button.secondary {
 	color: $steel;
+}
+
+.button {
+  transition: all .2s ease-in;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  box-shadow:
+    0 4px 4px rgba(0, 0, 0, .1),
+    0 8px 8px rgba(0, 0, 0, .1),
+    0 16px 16px rgba(0, 0, 0, .1);
 }
 
 
