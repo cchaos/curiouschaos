@@ -1,3 +1,69 @@
-#will-page {
+$will-primary: #87c390;
 
+#will-page {
+  .header_image {
+    overflow: hidden;
+
+    img {
+      max-width: 120%;
+    }
+  }
+}
+
+#will-logos-images {
+  border-top: 1px solid $iron;
+  border-bottom: 1px solid $iron;
+  text-align: center;
+
+  p {
+    text-transform: uppercase;
+    color: $aluminum;
+  }
+
+  .image:first-child {
+    border-bottom: 1px solid $iron;
+  }
+
+  @include breakpoint(medium) {
+    display: flex;
+
+    .image:first-child {
+      border-bottom: none;
+      border-right: 1px solid $iron;
+    }
+  }
+}
+
+#will-styleguide-images {
+  background: $monsoon;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @include breakpoint(large) {
+    display: flex;
+
+    img {
+      padding: 0 1rem;
+    }
+  }
+}
+
+#will-code-image {
+  background: $silver;
+}
+
+#will-apps-slick {
+  background: rgba($will-primary, .7);
+
+  .slick-slider {
+    background: transparent;
+    padding-bottom: 0 !important;
+  }
+
+  @include slick-change-colors(white);
+
+  img {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

@@ -12,11 +12,14 @@ $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 0.5;
 $slick-opacity-not-active: 0.25 !default;
 
+$slick-background: $smoke;
+
 @import "../../../bower_components/slick-carousel/slick/slick-theme.scss";
 
 .slick-slider {
   padding: $global-padding 0 $global-padding*3;
-  background: $smoke;
+  background: $slick-background;
+  margin-bottom: 0;
 
   .slick-next,
   .slick-prev {
@@ -78,5 +81,16 @@ $slick-opacity-not-active: 0.25 !default;
 
   @include breakpoint(large) {
     bottom: $global-padding*1.6;
+  }
+}
+
+@mixin slick-change-colors($color) {
+  .slick-prev:before,
+  .slick-next:before {
+    color: $color;
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: $color;
   }
 }

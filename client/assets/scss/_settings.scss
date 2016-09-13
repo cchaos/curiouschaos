@@ -80,14 +80,14 @@ $include-css: (
 // $base-font-size: 100%;
 
 // $base-line-height is 24px while $base-font-size is 16px
-$base-line-height: 140%;
+$base-line-height: 160%;
 
 // Text selector helpers
 // $headers: "h1,h2,h3,h4,h5,h6";
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic|Roboto+Slab);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic,900);
 $font-family-sans-serif: 'Roboto', Arial, sans-serif;
-$font-family-serif: 'Roboto Slab', Georgia, Cambria, serif;
+$font-family-serif: Georgia, Cambria, serif;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 $font-family-headline: $font-family-sans-serif;
 

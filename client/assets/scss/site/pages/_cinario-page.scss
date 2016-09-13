@@ -1,3 +1,95 @@
+$cinario-primary: #37474F;
+
 #cinario-page {
+
+}
+
+#cinario-personas {
+  overflow: visible;
+
+  > div,
+  > div > * {
+    overflow: visible;
+  }
+
+  .card {
+    background: white;
+    padding: 1rem;
+    border-radius: 3px;
+    box-shadow:
+      0 4px 4px rgba(0, 0, 0, .1),
+      0 8px 8px rgba(0, 0, 0, .1),
+      0 16px 16px rgba(0, 0, 0, .1);
+
+    margin-bottom: 2rem;
+  }
+
+  .caption {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-style: italic;
+    text-align: center;
+    font-size: $small-font-size;
+  }
+}
+
+#cinario-mvp-slick {
+  background: $slick-background;
+}
+
+#cinario-styleguide {
+  @extend .clearfix;
+
+  img {
+    max-width: calc(50% - .5rem);
+    float: left;
+    margin-bottom: 1rem;
+    &:nth-child(odd) {
+      margin-right: 1rem;
+    }
+  }
+
+  @include breakpoint($horizontal-breakpoint) {
+    img {
+      max-width: calc(50% - 1rem);
+      margin-bottom: 2rem;
+      &:nth-child(odd) {
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+
+#cinario-final-images {
+  text-align: center;
+  font-size: 0;
+
+  img {
+    max-width: 27%;
+    position: relative;
+
+    box-shadow:
+      0 4px 4px rgba(0, 0, 0, .1),
+      0 8px 8px rgba(0, 0, 0, .1),
+      0 16px 16px rgba(0, 0, 0, .1);
+
+    &:not(:first-child) {
+      margin-left: -10%;
+    }
+
+    &:nth-child(1),
+    &:nth-child(5) {
+      z-index: 1;
+    }
+
+    &:nth-child(2),
+    &:nth-child(4) {
+      z-index: 2;
+    }
+
+    &:nth-child(3) {
+      z-index: 3;
+    }
+  }
 
 }
