@@ -12,6 +12,7 @@
 #about-page {
 
   background-color: $primary-color;
+
   #{$headers}, p {
     color: $white;
   }
@@ -36,6 +37,10 @@
 
   @include breakpoint($horizontal-breakpoint) {
     min-height: 100vh;
+
+    .first {
+      //padding-top: $horn-images-size + $global-padding*5;
+    }
 
     .first p {
       margin-bottom: 5rem;

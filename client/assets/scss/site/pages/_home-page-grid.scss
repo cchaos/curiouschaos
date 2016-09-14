@@ -43,17 +43,26 @@
   h1 {
     margin-top: $global-padding*2;
     margin-bottom: $global-padding;
-    text-align: right;
-    //background-color: $primary-color;
+    text-align: left;
     color: $white;
+    font-weight: normal;
+    font-size: $h4-font-size;
   }
 
+  @include breakpoint(medium) {
+    h1 {
+      padding-left: .5rem;
+    }
+  }
 
   @include breakpoint($horizontal-breakpoint) {
     min-height: 100vh;
 
     h1 {
-      margin-top: $horn-images-size + $global-padding*4;
+      margin-top: $horn-images-size + $global-padding*5;
+      font-size: $h1-font-size;
+      text-align: right;
+      padding-right: 1rem;
     }
   }
 }

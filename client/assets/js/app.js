@@ -34,7 +34,7 @@
     FastClick.attach(document.body);
 
     $('#horn_images').cycle({
-        delay:  1500,
+        delay:  1200,
         speed:  500
     });
   }

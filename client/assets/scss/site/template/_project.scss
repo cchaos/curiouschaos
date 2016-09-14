@@ -184,11 +184,6 @@ aside.thanks {
 	  white-space: nowrap;
 	  overflow: hidden;
 	  text-overflow: ellipsis;
-
-	  @include breakpoint(large) {
-	  	width: auto;
-		  max-width: 100%;
-	  }
 	}
 
 	li:only-child {
