@@ -48,7 +48,8 @@ var paths = {
   vendorJS: [
     'bower_components/jquery/dist/jquery.js',
     'bower_components/slick-carousel/slick/slick.js',
-    'bower_components/angular-slick/dist/slick.js'
+    'bower_components/angular-slick/dist/slick.js',
+    'client/assets/js/jquery-cycle-lite.js'
   ],
   // These files are for your app's JavaScript
   appJS: [

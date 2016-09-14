@@ -99,9 +99,8 @@ $horn-images-size: rem-calc(80);
 		top: 0px;
 		left: 0px;
 
-		// incase there's no javascript, hide all but the first
-		&:not(:first-child){
-			display: none;
+		&:not(:last-child){
+			opacity: 0;
 		}
-	}
+  }
 }
