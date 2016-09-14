@@ -10,6 +10,12 @@
     }
   }
 
+  @include breakpoint($horizontal-breakpoint) {
+    main {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
 
@@ -35,13 +41,10 @@
 
 
 #home-page {
-
-  max-width: $container-width;
-  margin-right: auto;
-  margin-left: auto;
+  @extend %main-padding;
 
   h1 {
-    margin-top: $global-padding*2;
+    margin-top: 0;
     margin-bottom: $global-padding;
     text-align: left;
     color: $white;
@@ -56,11 +59,12 @@
   }
 
   @include breakpoint($horizontal-breakpoint) {
-    min-height: 100vh;
+    //min-height: 100vh;
 
     h1 {
-      margin-top: $horn-images-size + $global-padding*5;
+      margin-top: $horn-images-size + $global-padding*4;
       font-size: $h1-font-size;
+      padding-top: $global-padding;
       text-align: right;
       padding-right: 1rem;
     }
@@ -85,6 +89,8 @@
 
       transition: all .3s ease-out;
       opacity: .8;
+
+      [data-whatinput="touch"] &,
       &:hover,
       &:focus {
         opacity: 1;
@@ -156,114 +162,8 @@
 
   @include breakpoint(rem-calc(1440)) {
     > li  {
-      transform: scale(calc(100% * .2));
+      //transform: scale(calc(100% * .2));
     }
   }
 
-}
-
-/*
-#recent-grid {
-
-  @include block-list-container();
-  margin-bottom: 0;
-
-  > li {
-    @include block-list-item(
-                $color: $white, // Color of items
-                $color-hover: $white, // Color of items on hover
-                $color-disabled: $white, // Color of items when disabled
-                $background: transparent, // Background color
-                $background-hover: rgba($white, .1), // Background color on hover
-                $border: 1px solid rgba($white, .2), // Top and bottom border of items
-                $padding: $global-padding*2 $global-padding );
-
-    &:nth-child(odd) {
-      //background-color: rgba($white, .2);
-    }
-
-    > a {
-      display: flex;
-      flex-direction: column;
-
-      position: relative;
-      overflow: hidden;
-      .background {
-        position: absolute;
-        z-index: 1;
-        width: 100%;
-        left: 0;
-        top: -90%;
-        opacity: 0;
-        transition: all .25s ease-in;
-      }
-
-      &:hover,
-      &:focus {
-
-        .background {
-          top: -100%;
-          opacity: .3;
-        }
-
-      }
-    }
-  }
-
-  h2 {
-    margin-top: 0;
-    color: $white;
-  }
-
-  .subheader {
-    color: rgba($white, .5);
-  }
-
-  .text,
-  .details {
-    position: relative;
-    z-index: 2;
-  }
-
-  .text {
-    flex: 1 1 auto;
-  }
-
-  .details {
-    li {
-      font-size: $small-font-size;
-      text-transform: uppercase;
-
-      display: inline-block;
-      margin: $global-padding $global-padding 0 0;
-    }
-  }
-
-  @include breakpoint(large) {
-    > li > a {
-      flex-direction: row;
-    }
-
-    .details {
-      flex: 0 0 20%;
-      padding-left: $global-padding;
-
-      li {
-        display: block;
-        margin-top: $global-padding/2;
-      }
-    }
-  }
-}
-*/
-
-@keyframes recent-background-anim() {
-  0% {
-    top: -90%;
-    opacity: 0;
-  }
-  100% {
-    top: -100%;
-    opacity: .3;
-  }
 }

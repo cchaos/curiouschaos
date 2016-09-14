@@ -3,38 +3,35 @@ $horn-images-size: rem-calc(80);
 #top-banner {
   color: $white;
 
-  flex: 0 0 100%;
-
-  // Children
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @extend %main-padding;
+  padding-top: $global-padding*2;
+  padding-bottom: $global-padding;
 
   .inner {
-    padding: $global-padding*2 $global-padding $global-padding;
+    max-width: $paragraph-ideal;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   h1 {
     text-align: center;
+    line-height: 1em;
     margin-top: 0;
     margin-bottom: $global-padding;
     color: $white;
   }
 
-  header p {
-    width: 90%;
-    max-width: 36rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    text-align: center;
+  p {
     font-weight: $font-weight-bold;
   }
 
   .me-description,
-  footer,
   .about-link {
     display: none;
+  }
+
+  p:not(.me-description) {
+    text-align: right;
   }
 
   a {
@@ -42,36 +39,27 @@ $horn-images-size: rem-calc(80);
   }
 
   @include breakpoint($horizontal-breakpoint) {
-    flex: 0 0 (rem-calc(320) - 4rem);
-    transition: all .2s;
+    position: fixed;
+    width: $sidebar-width;
+    padding-bottom: $footer-height + 2rem;
+    padding-right: 0;
 
     h1 {
       margin-bottom: $global-padding*3;
     }
 
-    .inner {
-      padding-right: 0;
-    }
-
-    header p {
-      text-align: left;
-      width: 100%;
-      padding-left: $global-padding;
-    }
-
-    .me-description,
-    footer {
+    .me-description {
       display: block;
     }
   }
 
   @include breakpoint(95rem) {
-    flex-basis: 20%;
+    //flex-basis: 20%;
 
     .inner {
-      width: (rem-calc(320) - 4rem);
-      margin-left: auto;
-      margin-right: auto;
+      //width: (rem-calc(320) - 4rem);
+      //margin-left: auto;
+      //margin-right: auto;
     }
   }
 
@@ -80,13 +68,14 @@ $horn-images-size: rem-calc(80);
 // position the images on top of each other
 #horn_images {
 	position: relative;
+	transition: width .2s, height .2s, margin .2s;
 
 	// have to position all elements since we want them to be centered (without needing to use transform)
 	// need to tell the container what size it is (based on image sizes)
 	width: $horn-images-size;
 	height: $horn-images-size;
 	// then center it
-	margin: $global-padding auto $global-padding*2;
+	margin: 0 auto $global-padding*2;
 
 	background-color: desaturate(lighten($primary-color, 2%), 5%);
 	border-radius: $global-rounded;
@@ -102,5 +91,49 @@ $horn-images-size: rem-calc(80);
 		&:not(:last-child){
 			opacity: 0;
 		}
+  }
+
+  @include breakpoint($horizontal-breakpoint) {
+    margin-top: $global-padding*2;
+  }
+}
+
+@include breakpoint($horizontal-breakpoint down) {
+  body:not(.home):not(.about) {
+    #top-banner {
+      transition: height .2s;
+
+      .inner {
+        max-width: $container-width;
+      }
+
+      #horn_images,
+      h1 {
+        float: left;
+      }
+
+      #horn_images {
+        width: $horn-images-size/2;
+      	height: $horn-images-size/2;
+      	margin: -8px 1rem 0 0;
+      }
+
+      .me-description {
+        display: none;
+      }
+
+      p {
+        a {
+          display: block;
+          position: relative;
+          z-index: 5;
+        }
+
+        .text {
+          display: none;
+        }
+      }
+    }
+
   }
 }

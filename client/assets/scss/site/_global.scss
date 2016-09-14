@@ -1,17 +1,38 @@
 $horizontal-breakpoint: xlarge;
+$sidebar-width: rem-calc(308);
+$sidebar-min-height: rem-calc(500);
 
 // Prettify type rendering
 body {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
+
+	@include breakpoint($horizontal-breakpoint) {
+	  overflow: hidden;
+	}
+}
+
+%main-padding {
+  padding: 0 $global-padding;
 }
 
 main {
 	background: $primary-color url('../img/pattern3.png') left top no-repeat;
 	background-size: 100% auto;
 
+	> div {
+    max-width: $container-width;
+    margin-right: auto;
+    margin-left: auto;
+	}
+
 	@include breakpoint($horizontal-breakpoint) {
-  	background-position-x: 2rem;
+    width: calc(100% - #{$sidebar-width});
+    margin-left: $sidebar-width;
+    padding: 1rem 1rem 1rem 2rem;
+    background-position-x: 2rem;
+    height: 100vh;
+    overflow-y: auto;
 	}
 }
 
@@ -73,8 +94,10 @@ h5.subheader {
 	margin: 0 auto 2.5rem;
 }
 
+$paragraph-ideal: 32rem;
+
 p.ideal {
-	max-width: 32rem;
+	max-width: $paragraph-ideal;
 
 	&.text-center {
 		margin-left: auto;
@@ -150,6 +173,7 @@ section.layout {
 }
 
 // GRID FRAME LAYOUT
+/*
 .grid-frame {
  display: block;
  overflow-y: auto;
@@ -167,18 +191,19 @@ section.layout {
     }
   }
 }
+*/
 
-
+$footer-height: rem-calc(80);
 
 // FOOTER
 footer {
   padding-top: $global-padding;
-  padding-bottom: $global-padding;
-  background: $primary-color;
+  height: $footer-height;
 
   ul.inline-list, p {
     text-align: center;
     margin-left: 0;
+    margin-bottom: .5rem;
   }
 
   li, p {
@@ -191,15 +216,26 @@ footer {
   }
 
   a {
-    color: $white;
+    &,
+    &:hover,
+    &:focus {
+      color: $white;
+    }
   }
 
   p {
     color: rgba($white, .5);
-    margin-bottom: 0;
   }
 
   @include breakpoint($horizontal-breakpoint) {
-    display: none;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: $sidebar-width;
+  }
+
+  @media screen and (max-height: $sidebar-min-height) {
+    bottom: auto;
+    top: $sidebar-min-height - $footer-height;
   }
 }

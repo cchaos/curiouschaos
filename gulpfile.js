@@ -49,7 +49,8 @@ var paths = {
     'bower_components/jquery/dist/jquery.js',
     'bower_components/slick-carousel/slick/slick.js',
     'bower_components/angular-slick/dist/slick.js',
-    'client/assets/js/jquery-cycle-lite.js'
+    'client/assets/js/jquery-cycle-lite.js',
+    'bower_components/what-input/dist/what-input.min.js'
   ],
   // These files are for your app's JavaScript
   appJS: [
@@ -166,7 +167,7 @@ gulp.task('uglify:app', function() {
   ;
 });
 
-// Starts a test server, which you can view at http://localhost:8079
+// Starts a test server, which you can view at http://localhost:8080
 gulp.task('server', ['build'], function() {
   gulp.src('./build')
     .pipe($.webserver({

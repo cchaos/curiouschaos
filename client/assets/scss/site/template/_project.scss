@@ -12,12 +12,7 @@
   }
 
   @include breakpoint($horizontal-breakpoint) {
-    padding-left: 2rem; // to show shadow
-    padding-right: 1rem;
-
     article {
-      margin-top: $global-padding;
-      margin-bottom: $global-padding;
       box-shadow:
         0 4px 4px rgba(0, 0, 0, .1),
         0 8px 8px rgba(0, 0, 0, .1),
@@ -32,16 +27,26 @@
 //
 
 .project header {
+  @extend %main-padding;
 	padding-top: $global-padding;
 	padding-bottom: $global-padding*2;
 
 	.entry-title {
-	  font-size: $h2-font-size*1.2;
+	  line-height: 1.1;
 		margin-bottom: 1rem;
+
+		@include breakpoint(large) {
+		  font-size: $h2-font-size*1.2;
+		}
 	}
 
 	.categories {
   	margin-bottom: $global-padding*2;
+
+  	> li {
+    	margin-left: .5rem;
+    	margin-right: .5rem;
+  	}
 	}
 
 	p {
@@ -63,8 +68,7 @@
 //
 
 .entry-content {
-  padding-left: $global-padding*2;
-  padding-right: $global-padding*2;
+  @extend %main-padding;
   margin-bottom: 2rem;
 
   &.new-section {
@@ -87,8 +91,8 @@
 	}
 
 	@include breakpoint(95rem) {
-    padding-left: 5%;
-    padding-right: 5%;
+    //padding-left: 5%;
+    //padding-right: 5%;
   }
 }
 
@@ -113,23 +117,6 @@
 	.description {
 		margin-top: 8rem;
 	}
-}
-
-.video_browser {
-	margin-bottom: 4rem;
-
-	p {
-		margin-top: 3rem;
-	}
-}
-
-aside.thanks {
-	padding: 1rem;
-	background-color: $oil;
-	color: $gainsboro;
-	opacity: .8;
-	text-align: center;
-	font-style: italic;
 }
 
 // NAVIGATION

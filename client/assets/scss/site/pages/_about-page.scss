@@ -7,11 +7,20 @@
   #top-banner .about-link {
     display: none;
   }
+
+  @include breakpoint($horizontal-breakpoint) {
+    main {
+      padding: 0;
+    }
+  }
 }
 
 #about-page {
 
-  background-color: $primary-color;
+  @extend %main-padding;
+  padding-top: $global-padding*2;
+  padding-bottom: $global-padding*2;
+  background-color: desaturate(darken($primary-color, 5%), 5%);
 
   #{$headers}, p {
     color: $white;
@@ -30,21 +39,19 @@
   }
 
   #{$headers}, p {
-    max-width: 36rem;
+    max-width: $paragraph-ideal;
     margin-left: auto;
     margin-right: auto;
   }
 
   @include breakpoint($horizontal-breakpoint) {
-    min-height: 100vh;
-
-    .first {
-      //padding-top: $horn-images-size + $global-padding*5;
-    }
+    padding-top: $horn-images-size + $global-padding*6;
+    margin-left: 2rem;
+    padding-left: 0;
 
     .first p {
-      margin-bottom: 5rem;
-      font-size: $h3-font-size;
+      margin-bottom: 3rem;
+      font-size: $h4-font-size;
     }
   }
 

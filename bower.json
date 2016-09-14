@@ -30,6 +30,7 @@
   ],
   "dependencies": {
     "foundation-apps": "~1.2.0",
-    "angular-slick": "^0.2.1"
+    "angular-slick": "^0.2.1",
+    "what-input": "^3.0.0"
   }
 }
