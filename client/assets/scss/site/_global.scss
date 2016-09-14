@@ -1,4 +1,4 @@
-$horizontal-breakpoint: xlarge;
+$horizontal: xlarge;
 $sidebar-width: rem-calc(260);
 $sidebar-min-height: rem-calc(500);
 
@@ -7,7 +7,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 
-	@include breakpoint($horizontal-breakpoint) {
+	@include breakpoint($horizontal) {
 	  overflow: hidden;
 	  background: $primary-color url('../img/pattern3.png') right top no-repeat;
     background-size: calc(100% - (#{$sidebar-width + 2rem})) auto;
@@ -41,7 +41,7 @@ main {
   	}
 	}
 
-	@include breakpoint($horizontal-breakpoint) {
+	@include breakpoint($horizontal) {
   	background: none;
     width: calc(100% - #{$sidebar-width});
     margin-left: $sidebar-width;
@@ -230,7 +230,7 @@ footer {
     color: rgba($white, .5);
   }
 
-  @include breakpoint($horizontal-breakpoint) {
+  @include breakpoint($horizontal) {
     position: fixed;
     left: 0;
     bottom: 0;

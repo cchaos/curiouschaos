@@ -1,0 +1,144 @@
+#weddings-page {
+
+  blockquote {
+    color: $primary-color;
+    text-align: center;
+    font-size: 1.375rem;
+    font-style: italic;
+    margin-top: 2rem;
+  }
+
+  .entry-content {
+    padding: 0;
+  }
+
+  .image > *,
+  .text > *  {
+    max-width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .image > * {
+    padding-bottom: 2rem;
+  }
+
+  img {
+    display: block;
+  }
+
+	@include breakpoint(medium) {
+    .entry-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .image {
+      flex-basis: (7/12)*100%;
+
+      > * {
+        padding: 1rem;
+        max-width: 100%;
+      }
+    }
+
+    .text {
+      flex-basis: (5/12)*100%;
+
+      > * {
+        padding: 0 1rem;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .full-image {
+      flex-basis: 100%;
+    }
+
+    blockquote {
+      @include force-wrap;
+    }
+
+  }
+}
+
+#weddings-lopez {
+  @include breakpoint(meidum) {
+    .image > * {
+      padding-left: 2rem;
+    }
+  }
+}
+
+#weddings-johnson {
+  blockquote {
+    color: #677e90;
+  }
+
+  @include breakpoint(medium) {
+    .image {
+      > * {
+        padding-right: 2rem;
+      }
+    }
+
+    .text {
+      order: -1;
+    }
+  }
+}
+
+#weddings-stanley {
+  margin-bottom: 0;
+
+  .image > * {
+    padding-bottom: 0;
+  }
+}
+
+#weddings-stanley-2 {
+  margin-bottom: 0;
+
+  .text > * {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .image > * {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .thanks {
+    flex-basis: 100%;
+    padding: 1rem;
+    background-color: $oil;
+    color: $gainsboro;
+    opacity: .8;
+    text-align: center;
+    font-style: italic;
+  }
+
+  @include breakpoint(medium) {
+    .image,
+    .text {
+      flex-basis: 100%;
+    }
+
+    .image img {
+      padding: 0;
+    }
+  }
+
+  @include breakpoint(large) {
+    .image,
+    .text {
+      flex-basis: 50%;
+    }
+  }
+
+
+}

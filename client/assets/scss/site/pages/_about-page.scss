@@ -8,7 +8,7 @@
     display: none;
   }
 
-  @include breakpoint($horizontal-breakpoint) {
+  @include breakpoint($horizontal) {
     main {
       padding: 0;
     }
@@ -44,7 +44,7 @@
     margin-right: auto;
   }
 
-  @include breakpoint($horizontal-breakpoint) {
+  @include breakpoint($horizontal) {
     padding-top: $horn-images-size + $global-padding*6;
     margin-left: 2rem;
     padding-left: 0;

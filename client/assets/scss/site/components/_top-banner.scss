@@ -38,7 +38,7 @@ $horn-images-size: rem-calc(80);
     color: $white;
   }
 
-  @include breakpoint($horizontal-breakpoint) {
+  @include breakpoint($horizontal) {
     position: fixed;
     width: $sidebar-width;
     padding-bottom: $footer-height + 2rem;
@@ -91,12 +91,12 @@ $horn-images-size: rem-calc(80);
 		}
   }
 
-  @include breakpoint($horizontal-breakpoint) {
+  @include breakpoint($horizontal) {
     margin-top: $global-padding*2;
   }
 }
 
-@include breakpoint($horizontal-breakpoint down) {
+@include breakpoint($horizontal down) {
   body:not(.home):not(.about) {
     #top-banner {
       transition: height .2s;

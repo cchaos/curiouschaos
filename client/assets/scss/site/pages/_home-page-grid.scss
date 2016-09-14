@@ -10,7 +10,7 @@
     }
   }
 
-  @include breakpoint($horizontal-breakpoint) {
+  @include breakpoint($horizontal) {
     main {
       padding-left: 0;
       padding-right: 0;
@@ -60,7 +60,7 @@
     }
   }
 
-  @include breakpoint($horizontal-breakpoint) {
+  @include breakpoint($horizontal) {
     h1 {
       padding-top: $horn-images-size + $global-padding*6;
       font-size: $h1-font-size;
@@ -163,7 +163,7 @@
     }
   }
 
-  @include breakpoint($horizontal-breakpoint) {
+  @include breakpoint($horizontal) {
     > li {
       .text {
         min-height: rem-calc(200);

@@ -49,7 +49,7 @@ $cinario-primary: #37474F;
     }
   }
 
-  @include breakpoint($horizontal-breakpoint) {
+  @include breakpoint($horizontal) {
     img {
       max-width: calc(50% - 1rem);
       margin-bottom: 2rem;
