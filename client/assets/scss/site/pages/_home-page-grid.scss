@@ -44,9 +44,11 @@
   @extend %main-padding;
 
   h1 {
-    margin-top: 0;
+    padding-top: 2rem;
     margin-bottom: $global-padding;
+    margin-top: 0;
     text-align: left;
+    line-height: 1em;
     color: $white;
     font-weight: normal;
     font-size: $h4-font-size;
@@ -59,12 +61,9 @@
   }
 
   @include breakpoint($horizontal-breakpoint) {
-    //min-height: 100vh;
-
     h1 {
-      margin-top: $horn-images-size + $global-padding*4;
+      padding-top: $horn-images-size + $global-padding*6;
       font-size: $h1-font-size;
-      padding-top: $global-padding;
       text-align: right;
       padding-right: 1rem;
     }
@@ -88,7 +87,11 @@
       color: $steel;
 
       transition: all .3s ease-out;
-      opacity: .8;
+      opacity: 1;
+
+      box-shadow:
+        0 4px 4px rgba(0, 0, 0, .1),
+        0 8px 8px rgba(0, 0, 0, .1);
 
       [data-whatinput="touch"] &,
       &:hover,
@@ -108,7 +111,12 @@
     }
 
     h2 {
+      padding-top: 2rem;
       line-height: 1em;
+
+      @include breakpoint(medium only) {
+        font-size: $h2-font-size - $h2-font-reduction;
+      }
     }
   }
 
@@ -119,8 +127,7 @@
     align-items: stretch;
 
     > li {
-      flex: 1 1 300px;
-      max-width: 50%;
+      width: 50%;
       padding: $global-padding/2;
 
       .text {
@@ -146,23 +153,27 @@
     }
   }
 
-  @include breakpoint($horizontal-breakpoint) {
+  @include breakpoint(large) {
     > li {
       padding: $global-padding;
 
       a {
         padding: $global-padding*2;
       }
+    }
+  }
 
+  @include breakpoint($horizontal-breakpoint) {
+    > li {
       .text {
         min-height: rem-calc(200);
       }
     }
   }
 
-  @include breakpoint(rem-calc(1440)) {
+  @include breakpoint(rem-calc(1400)) {
     > li  {
-      //transform: scale(calc(100% * .2));
+      width: 33%;
     }
   }
 

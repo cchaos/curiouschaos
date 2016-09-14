@@ -44,6 +44,10 @@ $horn-images-size: rem-calc(80);
     padding-bottom: $footer-height + 2rem;
     padding-right: 0;
 
+    .inner {
+      width: ($sidebar-width - 2rem);
+    }
+
     h1 {
       margin-bottom: $global-padding*3;
     }
@@ -54,13 +58,7 @@ $horn-images-size: rem-calc(80);
   }
 
   @include breakpoint(95rem) {
-    //flex-basis: 20%;
-
-    .inner {
-      //width: (rem-calc(320) - 4rem);
-      //margin-left: auto;
-      //margin-right: auto;
-    }
+    width: 20%;
   }
 
 }

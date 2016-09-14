@@ -1,5 +1,5 @@
 $horizontal-breakpoint: xlarge;
-$sidebar-width: rem-calc(308);
+$sidebar-width: rem-calc(260);
 $sidebar-min-height: rem-calc(500);
 
 // Prettify type rendering
@@ -9,6 +9,12 @@ body {
 
 	@include breakpoint($horizontal-breakpoint) {
 	  overflow: hidden;
+	  background: $primary-color url('../img/pattern3.png') right top no-repeat;
+    background-size: calc(100% - (#{$sidebar-width + 2rem})) auto;
+	}
+
+	@include breakpoint(95rem) {
+    background-size: calc(80% - 2rem);
 	}
 }
 
@@ -16,23 +22,40 @@ body {
   padding: 0 $global-padding;
 }
 
+//.ng-enter { display:none; }
+//.ng-enter.ng-enter-active { display:block; }
+
 main {
-	background: $primary-color url('../img/pattern3.png') left top no-repeat;
+  background: $primary-color url('../img/pattern3.png') left top no-repeat;
 	background-size: 100% auto;
 
-	> div {
+	> * {
     max-width: $container-width;
     margin-right: auto;
     margin-left: auto;
 	}
 
+	@include breakpoint(large) {
+  	> * {
+    	padding: 1rem;
+  	}
+	}
+
 	@include breakpoint($horizontal-breakpoint) {
+  	background: none;
     width: calc(100% - #{$sidebar-width});
     margin-left: $sidebar-width;
-    padding: 1rem 1rem 1rem 2rem;
-    background-position-x: 2rem;
     height: 100vh;
     overflow-y: auto;
+
+    > * {
+      padding: 1rem 1rem 1rem 2rem;
+    }
+	}
+
+	@include breakpoint(95rem) {
+    width: 80%;
+    margin-left: 20%;
 	}
 }
 
@@ -172,30 +195,10 @@ section.layout {
   text-overflow: ellipsis;
 }
 
-// GRID FRAME LAYOUT
-/*
-.grid-frame {
- display: block;
- overflow-y: auto;
-
-  main.grid-block {
-    overflow: hidden;
-  }
-
-  @include breakpoint($horizontal-breakpoint) {
-    display: flex;
-    overflow-y: hidden;
-
-    main.grid-block {
-      overflow-y: auto;
-    }
-  }
-}
-*/
-
-$footer-height: rem-calc(80);
 
 // FOOTER
+$footer-height: rem-calc(80);
+
 footer {
   padding-top: $global-padding;
   height: $footer-height;
