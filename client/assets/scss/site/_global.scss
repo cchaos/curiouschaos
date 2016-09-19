@@ -43,8 +43,7 @@ main {
 
 	@include breakpoint($horizontal) {
   	background: none;
-    width: calc(100% - #{$sidebar-width});
-    margin-left: $sidebar-width;
+    padding-left: $sidebar-width;
     height: 100vh;
     overflow-y: auto;
 
@@ -54,8 +53,7 @@ main {
 	}
 
 	@include breakpoint(95rem) {
-    width: 80%;
-    margin-left: 20%;
+    padding-left: 20%;
 	}
 }
 
