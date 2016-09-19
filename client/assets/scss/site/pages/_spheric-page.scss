@@ -3,10 +3,45 @@
 }
 
 #spheric-mockups {
-  background: $smoke;
+  background: $slick-background;
+  padding: 0;
 
   .slick-slider {
     padding-bottom: 0 !important; // for all sizes
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    .slick-next {
+      right: 2rem;
+    }
+
+    .slick-prev {
+      left: 2rem;
+    }
+  }
+
+  .slick-slide {
+    position: relative;
+    padding-left: 5rem;
+    padding-right: 4rem;
+    overflow: hidden;
+  }
+
+  img:first-child {
+    max-width: 60%;
+  }
+  img:last-child {
+    position: absolute;
+    max-width: 70%;
+    bottom: 0%;
+    right: -100%;
+    transition: right .5s $animation-curve-default .25s;
+  }
+
+  .slick-active {
+    img:last-child {
+      right: 4rem;
+    }
   }
 }
 
@@ -41,6 +76,7 @@
 }
 
 #spheric-responsive {
+  //background: $smoke;
 
   .images {
     position: relative;
