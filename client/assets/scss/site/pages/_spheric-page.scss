@@ -3,10 +3,10 @@
 }
 
 #spheric-mockups {
-  background: $slick-background;
   padding: 0;
 
   .slick-slider {
+    background: #1e719a;
     padding-bottom: 0 !important; // for all sizes
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -20,27 +20,51 @@
     }
   }
 
+  @include change-slick-active-colors(white);
+
+  .slick-track {
+    transition-timing-function: $animation-curve-linear-out-slow-in !important;
+  }
+
   .slick-slide {
     position: relative;
-    padding-left: 5rem;
-    padding-right: 4rem;
+    padding-left: 2rem;
+    padding-right: 1rem;
     overflow: hidden;
   }
 
   img:first-child {
-    max-width: 60%;
+    max-width: 55%;
   }
   img:last-child {
     position: absolute;
-    max-width: 70%;
+    max-width: 60%;
     bottom: 0%;
     right: -100%;
-    transition: right .5s $animation-curve-default .25s;
+    opacity: .5;
+    transition: right .5s $animation-curve-default .25s,
+                opacity .5s $animation-curve-default .25s;
   }
 
   .slick-active {
     img:last-child {
-      right: 4rem;
+      right: 1rem;
+      opacity: 1;
+    }
+  }
+
+  @include breakpoint(large) {
+    .slick-slide {
+      padding-left: 5rem;
+      padding-right: 4rem;
+    }
+    img:last-child {
+      max-width: 60%;
+    }
+    .slick-active {
+      img:last-child {
+        right: 4rem;
+      }
     }
   }
 }
@@ -80,21 +104,16 @@
 
   .images {
     position: relative;
+    max-width: rem-calc(910);
+    margin-left: auto;
+    margin-right: auto;
     margin-top: $global-padding*2;
 
     img:last-child {
       position: absolute;
-      max-width: 31.25%;
-      right: 1.25%;
-      bottom: 10.5%;
-    }
-  }
-
-  @include breakpoint(large) {
-    .images {
-      max-width: 80%;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 23.74%;
+      right: 4%;
+      bottom: 16%;
     }
   }
 }

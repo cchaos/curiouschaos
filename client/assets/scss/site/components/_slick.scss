@@ -16,6 +16,14 @@ $slick-background: $smoke;
 
 @import "../../../bower_components/slick-carousel/slick/slick-theme.scss";
 
+@mixin change-slick-active-colors($color) {
+  .slick-prev:before,
+  .slick-next:before,
+  .slick-dots li.slick-active button:before {
+    color: $color;
+  }
+}
+
 .slick-slider {
   padding: $global-padding 0 $global-padding*3;
   background: $slick-background;
