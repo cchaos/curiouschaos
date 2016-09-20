@@ -57,6 +57,18 @@ main {
 	}
 }
 
+// disable pointer events except for on links so scrolling can happen over top-banner
+@include breakpoint($horizontal) {
+  #top-banner,
+  footer {
+    pointer-events: none;
+
+    a {
+      pointer-events: all;
+    }
+  }
+}
+
 // Reset margin and padding on figure element
 figure {
 	margin: 0;
@@ -115,7 +127,7 @@ h5.subheader {
 	margin: 0 auto 2.5rem;
 }
 
-$paragraph-ideal: 32rem;
+$paragraph-ideal: 26rem;
 
 p.ideal {
 	max-width: $paragraph-ideal;
@@ -211,12 +223,20 @@ footer {
     font-size: $small-font-size*.8;
   }
 
-  li {
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .inline-list li {
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: .05em;
   }
 
   a {
+    padding: 1rem .5rem;
+
     &,
     &:hover,
     &:focus {

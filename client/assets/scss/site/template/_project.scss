@@ -49,10 +49,8 @@
   	}
 	}
 
-	p {
-    max-width: $paragraph-ideal;
-	  padding-left: $global-padding*2;
-    padding-right: $global-padding*2;
+	p.lead {
+    max-width: $paragraph-ideal*1.4;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -83,7 +81,7 @@
   }
 
 	p {
-		max-width: 32rem;
+		max-width: $paragraph-ideal;
 
 		&.text-center {
 			margin-left: auto;
@@ -92,14 +90,15 @@
 	}
 
 	@include breakpoint($horizontal) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+
   	&.new-section {
       margin-top:  $global-padding*4;
     }
 	}
 
 	@include breakpoint(95rem) {
-    //padding-left: 5%;
-    //padding-right: 5%;
   }
 }
 

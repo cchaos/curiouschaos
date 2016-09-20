@@ -1,5 +1,27 @@
 #mimm-page {
 
+  .header_video_image {
+    text-align: center;
+    position: relative;
+    font-size: 0;
+
+    img {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    video {
+      position: relative;
+      z-index: 2;
+      max-width: 90%;
+      margin-top: 1rem;
+    }
+  }
+
   #mimm-intro,
   #mimm-mobile {
     text-align: center;

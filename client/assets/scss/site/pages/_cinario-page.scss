@@ -33,8 +33,26 @@ $cinario-primary: #37474F;
   }
 }
 
-#cinario-mvp-slick {
+#cinario-mvp {
   background: $slick-background;
+
+  .content {
+    padding-top: 2rem;
+  }
+
+  @include breakpoint(large) {
+    display: flex;
+
+    .content {
+      width: 30%;
+      margin-right: 5%;
+      padding-top: 6%;
+    }
+
+    .mvp-slick {
+      width: 65%;
+    }
+  }
 }
 
 #cinario-styleguide {
