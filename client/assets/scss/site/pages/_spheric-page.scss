@@ -12,11 +12,11 @@
     padding-right: 0 !important;
 
     .slick-next {
-      right: 2rem;
+      right: 1rem;
     }
 
     .slick-prev {
-      left: 2rem;
+      left: 1rem;
     }
   }
 
@@ -78,26 +78,17 @@
     @include breakpoint(medium) {
       max-width: 130%;
     }
-
-    @include breakpoint(large) {
-      max-width: 100%;
-    }
   }
 
-  @include breakpoint($horizontal) {
+  @include breakpoint(large) {
     display: flex;
 
     .content {
       flex: 0 0 30%;
       margin-right: 5%;
-      padding-top: 10%;
+      padding-top: 0;
+      align-self: center;
     }
-
-    img {
-      overflow: hidden;
-      max-width: 130%;
-    }
-
   }
 }
 
@@ -118,6 +109,17 @@
       max-width: 23.74%;
       right: 4%;
       bottom: 16%;
+    }
+  }
+}
+
+#spheric-responsive-intro {
+  @include breakpoint(medium) {
+    text-align: center;
+
+    p {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }
