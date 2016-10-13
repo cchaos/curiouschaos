@@ -66,6 +66,10 @@
 }
 
 #weddings-lopez {
+  blockquote {
+    color: #ceb07c;
+  }
+
   @include breakpoint(meidum) {
     .image > * {
       padding-left: 2rem;
