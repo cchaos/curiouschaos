@@ -29,24 +29,15 @@ $road-primary: #016e7a;
   margin-left: auto;
   margin-right: auto;
 
-  @include breakpoint(medium) {
-    display: flex;
-  }
+  display: flex;
 
   > div:first-child {
-    max-width: 50%;
-    margin-left: 16.6666666667%;
     margin-bottom: $global-padding*2;
-
-    @include breakpoint(medium) {
-      width: 33.3333333333%;
-      margin-left: 8.3333333333%;
-    }
+    width: 33.3333333333%;
+    margin-left: 8.3333333333%;
   }
 
   > div:last-child {
-    max-width: 58.3333333333%;
-    margin-left: 25%;
 
     position: relative;
     img:last-child {
@@ -55,10 +46,8 @@ $road-primary: #016e7a;
       left: 0;
     }
 
-    @include breakpoint(medium) {
       width: 41.6666666667%;
       margin-left: 8.3333333333%;
-    }
   }
 
 }

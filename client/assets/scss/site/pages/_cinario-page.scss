@@ -6,6 +6,8 @@ $cinario-primary: #37474F;
 
 #cinario-personas {
   overflow: visible;
+  background: $slick-background;
+  padding-top: 2rem;
 
   > div,
   > div > * {
@@ -31,13 +33,26 @@ $cinario-primary: #37474F;
     text-align: center;
     font-size: $small-font-size;
   }
+
+  @include breakpoint(medium) {
+    .grid-content:first-child {
+      padding-left: 0;
+    }
+
+    .grid-content:last-child {
+      padding-right: 0;
+    }
+  }
 }
 
 #cinario-mvp {
-  background: $slick-background;
 
   .content {
     padding-top: 2rem;
+  }
+
+  .slick-slider {
+    background: transparent;
   }
 
   @include breakpoint(large) {
@@ -51,12 +66,15 @@ $cinario-primary: #37474F;
 
     .mvp-slick {
       width: 65%;
+      align-self: center;
     }
   }
 }
 
 #cinario-styleguide {
   @extend .clearfix;
+  background: $slick-background;
+  padding-top: 2rem;
 
   img {
     max-width: calc(50% - .5rem);
@@ -86,11 +104,6 @@ $cinario-primary: #37474F;
     max-width: 27%;
     position: relative;
 
-    box-shadow:
-      0 4px 4px rgba(0, 0, 0, .1),
-      0 8px 8px rgba(0, 0, 0, .1),
-      0 16px 16px rgba(0, 0, 0, .1);
-
     &:not(:first-child) {
       margin-left: -10%;
     }
@@ -103,10 +116,17 @@ $cinario-primary: #37474F;
     &:nth-child(2),
     &:nth-child(4) {
       z-index: 2;
+      box-shadow:
+        0 4px 4px rgba(0, 0, 0, .1),
+        0 8px 8px rgba(0, 0, 0, .1);
     }
 
     &:nth-child(3) {
       z-index: 3;
+      box-shadow:
+        0 4px 4px rgba(0, 0, 0, .1),
+        0 8px 8px rgba(0, 0, 0, .1),
+        0 16px 16px rgba(0, 0, 0, .1);
     }
   }
 

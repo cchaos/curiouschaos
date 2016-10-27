@@ -50,9 +50,14 @@
 	}
 
 	p.lead {
-    max-width: $paragraph-ideal*1.4;
+    max-width: $paragraph-ideal*1.2;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	+ hr {
+  	width: 20%;
+  	margin: 0 auto $global-padding*3;
 	}
 
 	@include breakpoint(small only) {
@@ -62,9 +67,13 @@
   	}
 	}
 
-  @include breakpoint($horizontal) {
+  @include breakpoint(large) {
     padding-top: $global-padding*2;
     padding-bottom: $global-padding*3;
+
+    + hr {
+    	margin-bottom: $global-padding*4;
+  	}
   }
 }
 
@@ -89,6 +98,20 @@
 		}
 	}
 
+	@include breakpoint(small only) {
+  	.text-center p,
+  	p.text-center,
+  	h3.text-center {
+    	text-align: left !important;
+  	}
+	}
+
+	@include breakpoint(large) {
+  	p {
+      margin-bottom: 2rem;
+  	}
+  }
+
 	@include breakpoint($horizontal) {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -97,9 +120,6 @@
       margin-top:  $global-padding*4;
     }
 	}
-
-	@include breakpoint(95rem) {
-  }
 }
 
 // TYPES OF CONTENT
