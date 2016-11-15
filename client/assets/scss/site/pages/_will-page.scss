@@ -3,6 +3,7 @@ $will-primary: #87c390;
 #will-page {
   .header_image {
     overflow: hidden;
+    width: 100%;
 
     img {
       max-width: 120%;
@@ -28,6 +29,7 @@ $will-primary: #87c390;
   p {
     text-transform: uppercase;
     color: $aluminum;
+    text-align: center !important;
   }
 }
 

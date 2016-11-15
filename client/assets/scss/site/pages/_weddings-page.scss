@@ -101,6 +101,12 @@
   .image > * {
     padding-bottom: 0;
   }
+
+  .text > * {
+    margin-left: 1rem;
+    margin-right: 0;
+    max-width: 90%;
+  }
 }
 
 #weddings-stanley-2 {

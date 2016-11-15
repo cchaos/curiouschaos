@@ -18,21 +18,24 @@
 #about-page {
 
   @extend %main-padding;
+
   padding-top: $global-padding*2;
   padding-bottom: $global-padding*2;
-  background-color: desaturate(darken($primary-color, 5%), 5%);
 
-  #{$headers}, p {
-    color: $white;
+  > * {
+    //background-color: desaturate(darken($primary-color, 5%), 5%);
+    background-color: $white;
+    //color: $body-font-color;
+    box-shadow:
+      0 4px 4px rgba(0, 0, 0, .1),
+      0 8px 8px rgba(0, 0, 0, .1),
+      0 16px 16px rgba(0, 0, 0, .1);
   }
 
-  margin-left: -$global-spacing;
-  margin-right: -$global-spacing;
-
   // Children
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: center;
 
   .inner {
     padding: $global-padding;
@@ -46,8 +49,15 @@
 
   @include breakpoint($horizontal) {
     padding-top: $horn-images-size + $global-padding*6;
-    margin-left: 2rem;
-    padding-left: 0;
+    padding-left: 5rem;
+    padding-right: 3rem;
+    //margin-left: 2rem;
+    //padding-left: 0;
+
+    > * {
+      padding-top: 3rem;
+      padding-bottom: 1rem;
+    }
 
     .first p {
       margin-bottom: 3rem;

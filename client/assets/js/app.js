@@ -33,10 +33,14 @@
   function run() {
     FastClick.attach(document.body);
 
-    $('#horn_images').cycle({
-        delay:  1200,
-        speed:  500
-    });
+    $(document).ready(function() {
+
+      $('#horn_images').cycle({
+          delay:  1000,
+          speed:  500
+      });
+
+    } );
   }
 
 })();
