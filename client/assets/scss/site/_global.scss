@@ -260,3 +260,11 @@ footer {
     top: $sidebar-min-height - $footer-height;
   }
 }
+
+
+@include breakpoint(small only) {
+  .fadeIn,
+  .slideInUp {
+    transition: none !important;
+  }
+}

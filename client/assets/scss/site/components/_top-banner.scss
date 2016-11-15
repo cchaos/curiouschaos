@@ -132,7 +132,7 @@ $horn-images-size: rem-calc(80);
       #horn_images {
         width: $horn-images-size/2;
       	height: $horn-images-size/2;
-      	margin: -8px 1rem 0 0;
+      	margin: -10px 1rem 0 0;
       }
 
       .me-description {
@@ -140,6 +140,8 @@ $horn-images-size: rem-calc(80);
       }
 
       p {
+        margin-bottom: 0;
+
         a {
           display: block;
           position: relative;
@@ -147,7 +149,9 @@ $horn-images-size: rem-calc(80);
         }
 
         .text {
-          display: none;
+          width: 20px;
+          overflow: hidden;
+          display: inline-block;
         }
       }
     }
