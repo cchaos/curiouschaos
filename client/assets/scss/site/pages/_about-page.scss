@@ -47,17 +47,21 @@
     margin-right: auto;
   }
 
+  @include breakpoint(large) {
+
+    > * {
+      padding-top: 3rem;
+      padding-bottom: 1rem;
+    }
+
+  }
+
   @include breakpoint($horizontal) {
     padding-top: $horn-images-size + $global-padding*6;
     padding-left: 5rem;
     padding-right: 3rem;
     //margin-left: 2rem;
     //padding-left: 0;
-
-    > * {
-      padding-top: 3rem;
-      padding-bottom: 1rem;
-    }
 
     .first p {
       margin-bottom: 3rem;

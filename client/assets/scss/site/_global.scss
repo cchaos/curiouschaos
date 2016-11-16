@@ -7,14 +7,21 @@ body {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 
+  background: $primary-color url('../img/pattern3.png') right top repeat-y;
+	  background-size: 100% auto;
+	  background-position-y: rem-calc(340);
+
+	@include breakpoint(large) {
+
+	}
+
 	@include breakpoint($horizontal) {
 	  overflow: hidden;
-	  background: $primary-color url('../img/pattern3.png') right top no-repeat;
-    background-size: calc(100% - (#{$sidebar-width + 2rem})) auto;
+    //background-size: calc(100% - (#{$sidebar-width + 2rem})) auto;
 	}
 
 	@include breakpoint(95rem) {
-    background-size: calc(80% - 2rem);
+    //background-size: calc(80% - 2rem);
 	}
 }
 
@@ -22,12 +29,9 @@ body {
   padding: 0 $global-padding;
 }
 
-//.ng-enter { display:none; }
-//.ng-enter.ng-enter-active { display:block; }
-
 main {
-  background: $primary-color url('../img/pattern3.png') left top no-repeat;
-	background-size: 100% auto;
+  //background: $primary-color url('../img/pattern3.png') left top no-repeat;
+	//background-size: 100% auto;
 
 	> * {
     max-width: $container-width;
@@ -36,6 +40,8 @@ main {
 	}
 
 	@include breakpoint(large) {
+  	background: none;
+
   	> * {
     	padding: 1rem;
   	}
@@ -261,10 +267,10 @@ footer {
   }
 }
 
-
-@include breakpoint(small only) {
-  .fadeIn,
-  .slideInUp {
-    transition: none !important;
+.slideInUp,
+.fadeIn {
+  &.ng-enter-active,
+  &.ng-leave-active {
+    position: relative !important;
   }
 }

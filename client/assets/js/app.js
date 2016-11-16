@@ -23,15 +23,19 @@
     $urlProvider.otherwise('/');
 
     $locationProvider.html5Mode({
-      enabled:false,
+      enabled:true,
       requireBase: false
     });
 
     $locationProvider.hashPrefix('!');
   }
 
-  function run() {
+  function run($rootScope) {
     FastClick.attach(document.body);
+
+    $rootScope.$on('$stateChangeSuccess', function() {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    });
 
     $(document).ready(function() {
 
