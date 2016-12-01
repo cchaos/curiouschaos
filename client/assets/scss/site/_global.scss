@@ -67,10 +67,13 @@ main {
 @include breakpoint($horizontal) {
   #top-banner,
   footer {
-    pointer-events: none;
+    //pointer-events: none;
 
     a {
-      pointer-events: all;
+      //pointer-events: all;
+      // ie fix for no pointer-events
+      position: relative;
+      z-index: 20;
     }
   }
 }
@@ -259,6 +262,10 @@ footer {
     left: 0;
     bottom: 0;
     width: $sidebar-width;
+  }
+
+  @include breakpoint(95rem) {
+    width: 20%;
   }
 
   @media screen and (max-height: $sidebar-min-height) {

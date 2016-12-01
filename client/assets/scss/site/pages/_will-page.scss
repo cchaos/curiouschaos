@@ -38,12 +38,13 @@ $will-primary: #87c390;
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-bottom: 0;
+  @include clearfix;
 
   @include breakpoint(large) {
-    display: flex;
-
     img {
+      float: left;
       padding: 0 1rem;
+      max-width: 50%;
     }
   }
 }
