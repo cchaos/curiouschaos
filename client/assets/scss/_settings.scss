@@ -31,6 +31,27 @@
 
 @import "helpers/functions";
 
+/// Replace `$search` with `$replace` in `$string`
+/// @author Hugo Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  // first convert $string to a string if it is not
+  @if type-of($string) != string {
+    $string: "'" + $string + "'";
+  }
+
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
 // 1. CSS Exports
 // - - - - - - - - - - - - - - -
 
@@ -80,14 +101,14 @@ $include-css: (
 // $base-font-size: 100%;
 
 // $base-line-height is 24px while $base-font-size is 16px
-$base-line-height: 140%;
+$base-line-height: 160%;
 
 // Text selector helpers
 // $headers: "h1,h2,h3,h4,h5,h6";
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic|Roboto+Slab);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic,900);
 $font-family-sans-serif: 'Roboto', Arial, sans-serif;
-$font-family-serif: 'Roboto Slab', Georgia, Cambria, serif;
+$font-family-serif: Georgia, Cambria, serif;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 $font-family-headline: $font-family-sans-serif;
 
@@ -129,7 +150,7 @@ $gray-dark: $charcoal;
 $gray-light: $white-smoke;
 
 // We use these to control various global styles
-$body-background: $white;
+$body-background: $primary-color;
 $body-font-color: $steel;
 $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
@@ -202,7 +223,7 @@ $small-font-size: 80%;
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
-$paragraph-font-size: 1rem;
+$paragraph-font-size: rem-calc(14);
 $paragraph-line-height: $base-line-height;
 $paragraph-margin-bottom: 1rem;
 // $paragraph-aside-font-size: rem-calc(14);
@@ -485,6 +506,12 @@ $button-color: $white;
 // 18. Motion UI
 // - - - - - - - - - - - - - - -
 
+$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
+$animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);
+$animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);
+
+$animation-curve-default: $animation-curve-fast-out-slow-in;
+
 // Classes to use when triggering in/out animations
 // $motion-class: (
 //   in: "ng-enter",
@@ -500,7 +527,7 @@ $button-color: $white;
 // );
 
 // Set if movement-based transitions should also fade the element in and out
-// $motion-slide-and-fade: false;
+$motion-slide-and-fade: true;
 // $motion-hinge-and-fade: true;
 // $motion-scale-and-fade: true;
 // $motion-spin-and-fade: true;

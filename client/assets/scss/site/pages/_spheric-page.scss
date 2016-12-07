@@ -2,16 +2,130 @@
 
 }
 
-#spheric-responsive {
+#spheric-mockups {
+  padding: 0;
 
-  .images {
+  .slick-slider {
+    //background: transparent;
+    padding-bottom: 0 !important; // for all sizes
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    .slick-next {
+      right: 1rem;
+    }
+
+    .slick-prev {
+      left: 1rem;
+    }
+  }
+
+  //@include change-slick-active-colors(white);
+
+  .slick-track {
+    transition-timing-function: $animation-curve-linear-out-slow-in !important;
+  }
+
+  .slick-slide {
     position: relative;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    overflow: hidden;
+  }
 
+  img:first-child {
+    max-width: 55%;
+    opacity: 0;
+    transition: opacity .5s $animation-curve-default;
+  }
+  img:last-child {
+    position: absolute;
+    max-width: 60%;
+    bottom: 0%;
+    right: -100%;
+    opacity: .5;
+    transition: right .5s $animation-curve-default .25s,
+                opacity .5s $animation-curve-default .25s;
+  }
+
+  .slick-active {
+    img:first-child {
+      opacity: 1;
+    }
     img:last-child {
-      position: absolute;
-      max-width: 31.25%;
-      right: 1.25%;
-      bottom: 10.5%;
+      right: 1rem;
+      opacity: 1;
+    }
+  }
+
+  @include breakpoint(large) {
+    .slick-slide {
+      padding-left: 5rem;
+      padding-right: 4rem;
+    }
+    img:last-child {
+      max-width: 60%;
+    }
+    .slick-active {
+      img:last-child {
+        right: 4rem;
+      }
     }
   }
 }
+
+#spheric-code {
+  overflow: hidden;
+
+  img {
+    max-width: 160%;
+
+    @include breakpoint(medium) {
+      max-width: 130%;
+    }
+  }
+
+  @include breakpoint(large) {
+    display: flex;
+
+    .content {
+      flex: 0 0 30%;
+      margin-right: 5%;
+      padding-top: 0;
+      align-self: center;
+    }
+  }
+}
+
+#spheric-responsive {
+  background: #1e719a;
+  padding-top: 1%;
+  margin-bottom: 0;
+
+  .images {
+    position: relative;
+    max-width: rem-calc(910);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $global-padding*2;
+
+    img:last-child {
+      position: absolute;
+      max-width: 23.74%;
+      right: 4%;
+      bottom: 16%;
+    }
+  }
+}
+
+#spheric-responsive-intro {
+  @include breakpoint(medium) {
+    text-align: center;
+
+    p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+

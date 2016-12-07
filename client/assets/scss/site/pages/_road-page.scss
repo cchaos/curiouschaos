@@ -1,0 +1,53 @@
+$road-primary: #016e7a;
+
+#road-page {
+  aside {
+    background: $road-primary;
+    padding: $global-padding;
+    color: $white;
+
+    .button {
+      margin-top: 1rem;
+      margin-bottom: 0;
+
+      @include button-style(
+        $background: $white,
+        $background-hover: $white,
+        $color: $road-primary,
+        $style: solid
+      );
+    }
+  }
+}
+
+#road-details-images {
+
+  padding-left: 0;
+  padding-right: 0;
+
+  max-width: rem-calc(650);
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+
+  > div:first-child {
+    margin-bottom: $global-padding*2;
+    width: 33.3333333333%;
+    margin-left: 8.3333333333%;
+  }
+
+  > div:last-child {
+
+    position: relative;
+    img:last-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+      width: 41.6666666667%;
+      margin-left: 8.3333333333%;
+  }
+
+}

@@ -1,9 +1,81 @@
-$horizontal-breakpoint: xlarge;
+$horizontal: xlarge;
+$sidebar-width: rem-calc(260);
+$sidebar-min-height: rem-calc(500);
 
 // Prettify type rendering
 body {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
+
+  background: $primary-color url('../img/pattern3.png') right top repeat-y;
+	  background-size: 100% auto;
+	  background-position-y: rem-calc(340);
+
+	@include breakpoint(large) {
+
+	}
+
+	@include breakpoint($horizontal) {
+	  overflow: hidden;
+    //background-size: calc(100% - (#{$sidebar-width + 2rem})) auto;
+	}
+
+	@include breakpoint(95rem) {
+    //background-size: calc(80% - 2rem);
+	}
+}
+
+%main-padding {
+  padding: 0 $global-padding;
+}
+
+main {
+  //background: $primary-color url('../img/pattern3.png') left top no-repeat;
+	//background-size: 100% auto;
+
+	> * {
+    max-width: $container-width;
+    margin-right: auto;
+    margin-left: auto;
+	}
+
+	@include breakpoint(large) {
+  	background: none;
+
+  	> * {
+    	padding: 1rem;
+  	}
+	}
+
+	@include breakpoint($horizontal) {
+  	background: none;
+    padding-left: $sidebar-width;
+    height: 100vh;
+    overflow-y: auto;
+
+    > * {
+      padding: 1rem 1rem 1rem 2rem;
+    }
+	}
+
+	@include breakpoint(95rem) {
+    padding-left: 20%;
+	}
+}
+
+// disable pointer events except for on links so scrolling can happen over top-banner
+@include breakpoint($horizontal) {
+  #top-banner,
+  footer {
+    //pointer-events: none;
+
+    a {
+      //pointer-events: all;
+      // ie fix for no pointer-events
+      position: relative;
+      z-index: 20;
+    }
+  }
 }
 
 // Reset margin and padding on figure element
@@ -37,7 +109,7 @@ a {
 h1, h2 {
 	//font-family: $font-family-headline;
 	//text-align: center;
-	font-weight: $font-weight-bold;
+	font-weight: 900;
 }
 
 h1 {
@@ -46,7 +118,6 @@ h1 {
 }
 
 h2 {
-	letter-spacing: -.02em;
 	//margin-bottom: 2.5rem;
 }
 
@@ -63,6 +134,21 @@ h5.subheader {
 	text-align: center;
 	max-width: 48rem;
 	margin: 0 auto 2.5rem;
+}
+
+$paragraph-ideal: 33rem;
+
+p.ideal {
+	max-width: $paragraph-ideal;
+
+	&.text-center {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+video {
+  max-width: 100%;
 }
 
 // LAYOUT
@@ -93,6 +179,19 @@ section.layout {
 	color: $steel;
 }
 
+.button {
+  transition: all .2s ease-in;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  box-shadow:
+    0 4px 4px rgba(0, 0, 0, .1),
+    0 8px 8px rgba(0, 0, 0, .1),
+    0 16px 16px rgba(0, 0, 0, .1);
+}
+
 
 // CUSTOM MIXINS
 // ---------------------
@@ -115,50 +214,70 @@ section.layout {
   text-overflow: ellipsis;
 }
 
-// GRID FRAME LAYOUT
-.grid-frame {
- display: block;
- overflow-y: auto;
-
-  main.grid-block {
-    overflow: hidden;
-  }
-
-  @include breakpoint($horizontal-breakpoint) {
-    display: flex;
-    overflow-y: hidden;
-
-    main.grid-block {
-      overflow-y: auto;
-    }
-  }
-}
-
-
 
 // FOOTER
+$footer-height: rem-calc(80);
+
 footer {
   padding-top: $global-padding;
+  height: $footer-height;
 
   ul.inline-list, p {
     text-align: center;
     margin-left: 0;
+    margin-bottom: .5rem;
   }
 
   li, p {
     font-size: $small-font-size*.8;
   }
 
-  li {
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .inline-list li {
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: .05em;
   }
 
-  p {
-    color: $gray;
+  a {
+    padding: 1rem .5rem;
+
+    &,
+    &:hover,
+    &:focus {
+      color: $white;
+    }
   }
 
-  @include breakpoint($horizontal-breakpoint) {
-    display: none;
+  p {
+    color: rgba($white, .5);
+  }
+
+  @include breakpoint($horizontal) {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: $sidebar-width;
+  }
+
+  @include breakpoint(95rem) {
+    width: 20%;
+  }
+
+  @media screen and (max-height: $sidebar-min-height) {
+    bottom: auto;
+    top: $sidebar-min-height - $footer-height;
+  }
+}
+
+.slideInUp,
+.fadeIn {
+  &.ng-enter-active,
+  &.ng-leave-active {
+    position: relative !important;
   }
 }

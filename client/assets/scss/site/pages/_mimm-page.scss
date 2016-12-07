@@ -1,0 +1,43 @@
+#mimm-page {
+
+  .header_image {
+    background: url('../img/mimm/header_underlay.jpg') no-repeat center;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    font-size: 0;
+
+    img {
+      width: auto;
+      padding: 2rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  #mimm-intro,
+  #mimm-mobile {
+    text-align: center;
+  }
+
+  aside {
+    text-align: center;
+    padding: 1rem;
+    background: $monsoon;
+    color: $white;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    &:last-of-type {
+      background: $smoke;
+      color: $aluminum;
+
+      p {
+        font-size: $small-font-size;
+        font-style: italic;
+      }
+    }
+  }
+}

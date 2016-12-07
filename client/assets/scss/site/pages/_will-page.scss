@@ -1,3 +1,121 @@
-#will-page {
+$will-primary: #87c390;
 
+#will-page {
+  .header_image {
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      max-width: 120%;
+    }
+  }
+}
+
+#will-logos-images {
+  border-top: 1px solid $iron;
+  border-bottom: 1px solid $iron;
+  text-align: center;
+  padding: 0;
+
+  display: flex;
+  .image {
+    flex-basis: 50%;
+  }
+
+  .image:first-child {
+    border-right: 1px solid $iron;
+  }
+
+  p {
+    text-transform: uppercase;
+    color: $aluminum;
+    text-align: center !important;
+  }
+}
+
+#will-styleguide-images {
+  background: $monsoon;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+  @include clearfix;
+
+  @include breakpoint(large) {
+    img {
+      float: left;
+      padding: 0 1rem;
+      max-width: 50%;
+    }
+  }
+}
+
+#will-code {
+  background: $silver;
+  padding: 1rem 0 0;
+  margin-top: 0;
+
+  .text {
+    padding: 1rem 1rem 0;
+    //text-align: center;
+  }
+
+  .image {
+    text-align: right;
+  }
+
+  @include breakpoint(medium) {
+    display: flex;
+
+    > * {
+      flex-basis: 50%;
+    }
+
+    .text {
+      text-align: left;
+    }
+  }
+
+  @include breakpoint(large) {
+    .text {
+      padding-left: 4rem;
+      padding-top: 3rem;
+    }
+  }
+
+  @include breakpoint($horizontal) {
+    > .image {
+      flex-basis: 70%;
+    }
+  }
+}
+
+#will-apps-slick {
+  background: rgba($will-primary, .7);
+
+  .slick-slider {
+    background: transparent;
+    padding-bottom: 0 !important;
+  }
+
+  @include slick-change-colors(white);
+
+  img {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+#will-apps-images {
+  padding: 0;
+  margin: 0;
+
+  @include breakpoint(medium) {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      flex-basis: 50%;
+      max-width: none;
+    }
+  }
 }

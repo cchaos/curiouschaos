@@ -1,0 +1,124 @@
+$slick-font-path: "";
+$slick-font-family: $paragraph-font-family;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: $primary-color;
+$slick-dot-color: $oil;
+$slick-dot-color-active: $primary-color;
+$slick-prev-character: "";
+$slick-next-character: "";
+$slick-dot-character: "•" !default;
+$slick-dot-size: rem-calc(36);
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 0.5;
+$slick-opacity-not-active: 0.25 !default;
+
+$slick-background: $smoke;
+$slick-arrow-icon-color: str-replace($slick-arrow-color, '#', '%23');
+
+@import "../../../bower_components/slick-carousel/slick/slick-theme.scss";
+
+@mixin change-slick-active-colors($color) {
+  .slick-next {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$color}' width='105' height='105' viewBox='0 0 105 105'%3E%3Cpath d='M52.5 0A52.5 52.5 0 1 0 105 52.5 52.56 52.56 0 0 0 52.5 0zm0 100A47.5 47.5 0 1 1 100 52.5 47.55 47.55 0 0 1 52.5 100z'/%3E%3Cpath d='M60.15 30.73a2.5 2.5 0 0 0-3.54 3.54L72.36 50H26.62a2.5 2.5 0 0 0 0 5h45.73L56.6 70.73a2.5 2.5 0 1 0 3.55 3.54l20-20a2.5 2.5 0 0 0 0-3.54z'/%3E%3C/svg%3E");
+  }
+  .slick-prev {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$color}' width='105' height='105' viewBox='0 0 105 105'%3E%3Cpath d='M52.5 105A52.5 52.5 0 1 0 0 52.5 52.56 52.56 0 0 0 52.5 105zm0-100A47.5 47.5 0 1 1 5 52.5 47.55 47.55 0 0 1 52.5 5z'/%3E%3Cpath d='M44.85 74.27a2.5 2.5 0 0 0 3.54-3.54L32.64 55h45.73a2.5 2.5 0 0 0 0-5H32.65L48.4 34.27a2.5 2.5 0 1 0-3.55-3.54l-20 20a2.5 2.5 0 0 0 0 3.54z'/%3E%3C/svg%3E");
+  }
+  .slick-dots li.slick-active button:before {
+    color: $color;
+  }
+}
+
+.slick-slider {
+  padding: $global-padding 0 $global-padding*3;
+  background: $slick-background;
+  margin-bottom: 0;
+
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+    width: rem-calc(48);
+    height: rem-calc(48);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+
+  @include change-slick-active-colors($slick-arrow-icon-color);
+
+  .slick-next {
+    right: 0;
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  @include breakpoint(medium) {
+    padding: $global-padding*2 $global-padding*2 $global-padding*4;
+
+    .slick-next,
+    .slick-prev {
+      margin-top: -3rem;
+      display: block !important;
+    }
+
+    .slick-next {
+      right: -.75rem;
+    }
+    .slick-prev {
+      left: -.75rem;
+    }
+  }
+
+  // dots on top instead of bottom
+  &.reverse {
+    padding: $global-padding*3 0 $global-padding;
+
+    .slick-dots {
+      bottom: auto;
+      top: $global-padding*.4;
+    }
+
+    .slick-next,
+    .slick-prev {
+      top: auto;
+      bottom: 50%;
+      margin-top: 0;
+      margin-bottom: -$global-padding*2;
+    }
+
+    @include breakpoint(large) {
+      padding: $global-padding*4 $global-padding*2 $global-padding*2;
+
+      .slick-dots {
+        top: $global-padding*1;
+      }
+    }
+  }
+}
+
+.slick-dots {
+  bottom: $global-padding*.8;
+  left: 0;
+  margin: 0;
+
+  li button:before {
+    transition: opacity .2s;
+  }
+
+  @include breakpoint(large) {
+    bottom: $global-padding*1.6;
+  }
+}
+
+@mixin slick-change-colors($color) {
+  .slick-prev:before,
+  .slick-next:before {
+    color: $color;
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: $color;
+  }
+}

@@ -1,3 +1,5 @@
+$rmb-primary: #467c84;
+
 #rmb-page {
 	.header_video_image {
 		position: relative;
@@ -8,27 +10,51 @@
 			bottom: 0;
 		}
 	}
+}
 
-	.screenshot {
-  	img {
-    	max-width: 90%;
-  	}
-	}
+#rmb-iphone-aside {
+  padding: 0;
+  margin-bottom: 0;
 
-	aside .link_out {
-		background-color: $silver;
+  .image img {
+    max-height: 20rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+	aside {
+		background-color: $rmb-primary;
 		padding: 2rem;
-		margin-top: 4rem;
+		text-align: center;
 
 		h4 {
 			margin-top: 1rem;
-			//color: $white-smoke !important;
+			color: $white-smoke !important;
 			margin-bottom: 2rem;
 		}
 
 		.button {
 			font-weight: $font-weight-bold;
 		}
+	}
+
+	@include breakpoint(large) {
+  	display: flex;
+
+  	> * {
+    	flex-basis: 50%;
+  	}
+
+  	.image img {
+    	max-height: none;
+    	width: auto;
+  	}
+
+  	aside {
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+  	}
 	}
 
 }
