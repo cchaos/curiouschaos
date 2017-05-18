@@ -285,3 +285,7 @@ footer {
 .thumb.round {
   border-radius: 50%;
 }
+
+img[src*="clicky"] {
+  display: none;
+}
