@@ -47,6 +47,25 @@
     margin-right: auto;
   }
 
+  .cheers {
+    font-family: $font-family-serif;
+    color: $aluminum;
+    font-size: 1.7rem;
+    font-weight: $font-weight-normal;
+    font-style: italic;
+    //line-height: rem-calc(100);
+    text-align: right;
+
+    img {
+      margin-left: 3rem;
+      vertical-align: top;
+    }
+  }
+
+  .button:last-of-type {
+    margin-right: 0;
+  }
+
   @include breakpoint(large) {
 
     > * {
