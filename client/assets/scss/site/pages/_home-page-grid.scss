@@ -47,16 +47,32 @@
     padding-top: 2rem;
     margin-bottom: $global-padding;
     margin-top: 0;
-    text-align: left;
     line-height: 1em;
-    color: $white;
     font-weight: normal;
     font-size: $h4-font-size;
   }
 
+  h1, > p {
+    color: $white;
+    text-align: left;
+
+    a {
+      color: $white;
+      text-decoration: underline;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
   @include breakpoint(medium) {
-    h1 {
+    h1, > p {
       padding-left: .5rem;
+    }
+  }
+
+  @include breakpoint(large) {
+    h1, > p {
+      padding-left: 1rem;
     }
   }
 
@@ -64,8 +80,17 @@
     h1 {
       padding-top: $horn-images-size + $global-padding*6;
       font-size: $h1-font-size;
+    }
+
+    h1, > p {
       text-align: right;
       padding-right: 1rem;
+    }
+  }
+
+  @include breakpoint(rem-calc(1400)) {
+    h1, > p {
+      padding-right: 2rem;
     }
   }
 }
