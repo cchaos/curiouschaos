@@ -45,6 +45,9 @@
       .when('/weddings', {
         templateUrl: 'projects/weddings.html',
       })
+      .when('/res-tools', {
+        templateUrl: 'projects/res-tools.html',
+      })
       .when('/about', {
         templateUrl: 'about.html',
       });
@@ -67,7 +70,7 @@
     $(document).ready(function() {
 
       $('#horn_images').cycle({
-          delay:  1000,
+          delay:  500,
           speed:  500
       });
 

@@ -12,6 +12,21 @@ $rmb-primary: #467c84;
 	}
 }
 
+#rmb-screenshot {
+  &, .screenshot {
+    // allow image's dropshadow to extend bounds
+    overflow: visible;
+  }
+
+  img {
+    border-radius: 5px;
+    box-shadow:
+      0 4px 4px rgba(0, 0, 0, .1),
+      0 8px 8px rgba(0, 0, 0, .1),
+      0 8px 54px 9px rgba(0, 0, 0, .1);;
+  }
+}
+
 #rmb-iphone-aside {
   padding: 0;
   margin-bottom: 0;

@@ -6,6 +6,10 @@ $road-primary: #016e7a;
     padding: $global-padding;
     color: $white;
 
+    p {
+      margin-bottom: 0;
+    }
+
     .button {
       margin-top: 1rem;
       margin-bottom: 0;

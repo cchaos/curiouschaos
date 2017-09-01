@@ -1,3 +1,6 @@
+$cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+
+
 .home {
 
   #top-banner {
@@ -118,7 +121,6 @@
         0 4px 4px rgba(0, 0, 0, .1),
         0 8px 8px rgba(0, 0, 0, .1);
 
-      [data-whatinput="touch"] &,
       &:hover,
       &:focus {
         opacity: 1;
@@ -155,6 +157,17 @@
       width: 50%;
       padding: $global-padding/2;
 
+      .text,
+      .details {
+        position: relative;
+        z-index: 1;
+        transition: transform .4s $cubic-bezier, opacity .3s $cubic-bezier;
+      }
+
+      .text {
+        transition-delay: .1s;
+      }
+
       .text {
         min-height: rem-calc(180);
         display: flex;
@@ -167,9 +180,91 @@
       }
 
       a {
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          z-index: 0;
+
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center top;
+
+          opacity: 0;
+          transition: opacity .6s $cubic-bezier, transform .6s $cubic-bezier;
+
+          transform: scale(1.05);
+          transform-origin: center;
+        }
+
+
+        &:hover,
+        &:focus {
+          &::before {
+            opacity: 1;
+            transition-delay: .1s;
+            transform: scale(1);
+          }
+
+          .text,
+          .details {
+            transform: translateY(-500px);
+            transition-duration: .6, .5;
+            opacity: 0;
+          }
+
+          .text {
+            transition-delay: .1s;
+          }
+
+          .details {
+            transition-delay: .2s;
+          }
+        }
+
+        // all the custom background images based on href
+
+        &[href*="res-tools"]::before {
+          background-image: url(/assets/img/res-tools/Final.jpg);
+        }
+
+        &[href*="spheric"]::before {
+          background-image: url(/assets/img/spheric/banner.jpg);
+        }
+
+        &[href*="cinario"]::before {
+          background-image: url(/assets/img/cinario/styleguide-1-large.jpg);
+          background-size: auto 100%;
+          background-position-x: left;
+        }
+
+        &[href*="the-road"]::before {
+          background-image: url(/assets/img/road/TheRoad_header_poster.jpg);
+        }
+
+        &[href*="reinventing"]::before {
+          background-image: url(/assets/img/rmb/poster.jpg);
+          background-position-y: center;
+        }
+
+        &[href*="will"]::before {
+          background-image: url(/assets/img/will/branding-mockups.jpg);
+        }
+
+        &[href*="weddings"]::before {
+          background-image: url(/assets/img/weddings/Johnson_header.jpg);
+        }
+
+
       }
 
       .categories {
@@ -198,7 +293,7 @@
 
   @include breakpoint(rem-calc(1400)) {
     > li  {
-      width: 33%;
+      //width: 33%;
     }
   }
 
